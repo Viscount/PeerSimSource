@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/workspace/PeerSimSource/lib/djep-1.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/PeerSimSource/lib/jep-2.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/PeerSimSource/lib/peersim-doclet.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/PeerSimSource/lib/REngine.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/PeerSimSource/lib/RserveEngine.jar"/>
+	<classpathentry kind="lib" path="/DONAinPeerSim/bin" sourcepath="/DONAinPeerSim/src"/>
+	<classpathentry kind="lib" path="D:/workspace/PeerSimSource/lib/jackson-all-1.7.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
