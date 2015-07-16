@@ -49,14 +49,19 @@ public class QueryHandler extends Handler{
         }
         else {
             // find the highest top n potential in neighbors
-            List<Field> candidateNextHop = CommonUtil.findTopN(allCandidateField,FieldBasedProtocol.forward_num);
-            message.setTTL(message.getTTL()-1);
-            String json = JsonUtil.toJson(message);
-            for ( Field field : candidateNextHop ){
-                long nodeID = field.getSourceID();
-                Node nexthop = Network.get(Integer.parseInt(Long.toString(nodeID)));
-                ((Transport)node.getProtocol(FastConfig.getTransport(protocolID))).
-                        send(node,nexthop,json,protocolID);
+            try {
+                List<Field> candidateNextHop = CommonUtil.findTopN(allCandidateField, FieldBasedProtocol.forward_num);
+                Message forward_mess = message.clone();
+                forward_mess.setTTL(message.getTTL() - 1);
+                String json = JsonUtil.toJson(forward_mess);
+                for (Field field : candidateNextHop) {
+                    long nodeID = field.getSourceID();
+                    Node nexthop = Network.get(Integer.parseInt(Long.toString(nodeID)));
+                    ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
+                            send(node, nexthop, json, protocolID);
+                }
+            } catch ( Exception e){
+                e.printStackTrace();
             }
         }
 

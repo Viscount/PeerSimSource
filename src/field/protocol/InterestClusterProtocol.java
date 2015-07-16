@@ -1,7 +1,5 @@
 package field.protocol;
 
-import field.entity.FieldList;
-import field.entity.ResourceRepo;
 import field.entity.message.Message;
 import field.handler.Handler;
 import field.handler.HandlerFactory;
@@ -12,25 +10,26 @@ import peersim.edsim.EDProtocol;
 import peersim.vector.SingleValueHolder;
 
 /**
- * Created by TongjiSSE on 2015/7/12.
+ * Created by TongjiSSE on 2015/7/16.
  */
-public class FieldBasedProtocol extends SingleValueHolder implements EDProtocol{
+public class InterestClusterProtocol extends SingleValueHolder implements EDProtocol {
 
-    private static final String PAR_FORWARD_NUM = "forward_num";
+    private static final String PAR_FIELD_PID = "field_pid";
 
-    public static int forward_num;
+    public static int field_pid;
 
-    public FieldList field;
-    public ResourceRepo resource;
+    private Node upstreamNode;
+    private Node RingNeighborNode;
 
-    public FieldBasedProtocol(String prefix) {
+
+    public InterestClusterProtocol(String prefix) {
         super(prefix);
-        forward_num = Configuration.getInt(prefix+"."+PAR_FORWARD_NUM);
+        field_pid = Configuration.getInt(prefix+"."+PAR_FIELD_PID);
     }
 
     @Override
     public void processEvent(Node node, int pid, Object event) {
-        Message message = JsonUtil.toObject((String)event,Message.class);
+        Message message = JsonUtil.toObject((String) event, Message.class);
 
         Handler handler = HandlerFactory.createHandler(message.getType());
         if ( handler!=null ) handler.handleMessage(node,pid,message);

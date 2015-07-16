@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by TongjiSSE on 2015/7/13.
  */
-public class Message {
+public class Message implements Cloneable{
 
     private long requester;
     private String type;
@@ -65,5 +65,12 @@ public class Message {
 
     public void setQueryKeywords(List queryKeywords) {
         this.queryKeywords = queryKeywords;
+    }
+
+    @Override
+    public Message clone() throws CloneNotSupportedException {
+        Message cloned = (Message) super.clone();
+        cloned.queryKeywords.addAll(queryKeywords);
+        return cloned;
     }
 }
