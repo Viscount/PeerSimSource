@@ -19,7 +19,7 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
     public static int field_pid;
 
     private Node upstreamNode;
-    private Node RingNeighborNode;
+    private Node ringNeighborNode;
 
 
     public InterestClusterProtocol(String prefix) {
@@ -34,5 +34,21 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
         Handler handler = HandlerFactory.createHandler(message.getType());
         if ( handler!=null ) handler.handleMessage(node,pid,message);
 
+    }
+
+    public Node getUpstreamNode() {
+        return upstreamNode;
+    }
+
+    public void setUpstreamNode(Node upstreamNode) {
+        this.upstreamNode = upstreamNode;
+    }
+
+    public Node getRingNeighborNode() {
+        return ringNeighborNode;
+    }
+
+    public void setRingNeighborNode(Node ringNeighborNode) {
+        this.ringNeighborNode = ringNeighborNode;
     }
 }

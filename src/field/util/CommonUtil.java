@@ -9,6 +9,8 @@ import java.util.List;
  */
 public class CommonUtil {
 
+    public static int MAX_MESSAGE_TTL = 7;
+
     public static <T extends Comparable< ? super T>> T findMax( List<T> list ){
         T result = null;
         for ( T element : list ){
