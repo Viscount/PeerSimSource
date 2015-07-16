@@ -11,7 +11,7 @@ public class Message implements Cloneable{
     private long requester;
     private String type;
     private int interestType;
-    private int queryID;
+    private long queryID;
     private int TTL;
     private List queryKeywords;
 
@@ -43,11 +43,11 @@ public class Message implements Cloneable{
         this.interestType = interestType;
     }
 
-    public int getQueryID() {
+    public long getQueryID() {
         return queryID;
     }
 
-    public void setQueryID(int queryID) {
+    public void setQueryID(long queryID) {
         this.queryID = queryID;
     }
 

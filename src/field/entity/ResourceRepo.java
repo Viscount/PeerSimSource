@@ -32,6 +32,7 @@ public class ResourceRepo {
             int hit_num = resource.matchKeywords(queryKeywords);
             if ( hit_num > 0 ){
                 QueryResult result = new QueryResult();
+                result.setResourceID(resource.getResourceID());
                 result.setHit_num(hit_num);
                 result.setHit_timestamp(CommonState.getTime());
                 result.setQueryID(message.getQueryID());

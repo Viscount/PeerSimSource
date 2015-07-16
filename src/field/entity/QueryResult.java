@@ -7,9 +7,18 @@ import field.entity.Resource;
  */
 public class QueryResult {
 
+    private long resourceID;
     private long hit_timestamp;
     private long queryID;
     private int hit_num;
+
+    public long getResourceID() {
+        return resourceID;
+    }
+
+    public void setResourceID(long resourceID) {
+        this.resourceID = resourceID;
+    }
 
     public long getHit_timestamp() {
         return hit_timestamp;
