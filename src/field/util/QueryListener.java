@@ -23,6 +23,38 @@ public class QueryListener {
         this.resultSet = new HashSet<Long>();
     }
 
+    public long getStart_up_time() {
+        return start_up_time;
+    }
+
+    public void setStart_up_time(long start_up_time) {
+        this.start_up_time = start_up_time;
+    }
+
+    public long getFirst_hit_time() {
+        return first_hit_time;
+    }
+
+    public void setFirst_hit_time(long first_hit_time) {
+        this.first_hit_time = first_hit_time;
+    }
+
+    public long getFirst_full_hit_time() {
+        return first_full_hit_time;
+    }
+
+    public void setFirst_full_hit_time(long first_full_hit_time) {
+        this.first_full_hit_time = first_full_hit_time;
+    }
+
+    public Set<Long> getResultSet() {
+        return resultSet;
+    }
+
+    public void setResultSet(Set<Long> resultSet) {
+        this.resultSet = resultSet;
+    }
+
     public void receiveResult(List<QueryResult> resultList){
         if ( resultList.size() > 0 ){
             for ( QueryResult queryResult : resultList ){

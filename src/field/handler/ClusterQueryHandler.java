@@ -3,6 +3,7 @@ package field.handler;
 import field.entity.message.Message;
 import field.protocol.FieldBasedProtocol;
 import field.protocol.InterestClusterProtocol;
+import field.util.GlobalListener;
 import field.util.JsonUtil;
 import peersim.config.FastConfig;
 import peersim.core.Node;
@@ -21,6 +22,7 @@ public class ClusterQueryHandler extends Handler{
 
         // search in local repo
         List resultList = localFieldProtocol.resource.findResultForQuery(message);
+        GlobalListener.receiveQueryResult(message.getQueryID(), resultList);
         // TODO result process
 
         // forward in Interest Cluster Layer
