@@ -38,14 +38,19 @@ public class Initializer implements Control{
     public Initializer(String prefix){
         pid_fbp = Configuration.getPid(prefix+","+PAR_PROT_FBP);
         pid_icp = Configuration.getPid(prefix+","+PAR_PROT_ICP);
-        interest_per_node = Configuration.getInt(prefix+","+PAR_INTEREST_PER_NODE);
+        interest_per_node = Configuration.getInt(prefix + "," + PAR_INTEREST_PER_NODE);
+        resource_per_node = Configuration.getInt(prefix + "," + PAR_RESOURCE_PER_NODE);
+        interest_num = Configuration.getInt(prefix+","+PAR_INTEREST_NUM);
+        resource_num = Configuration.getInt(prefix+","+PAR_RESOURCE_NUM);
+        keyword_per_interest = Configuration.getInt(prefix+","+PAR_KEYWORD_PER_INTEREST);
+        keyword_per_resource = Configuration.getInt(prefix+","+PAR_KEYWORD_PER_RESOURCE);
     }
 
     @Override
     public boolean execute() {
         GlobalListener.init();
         KeywordDb.init();
-        KeywordDb.generate(interest_num * keyword_per_interest- 1);
+        KeywordDb.generate(interest_num * keyword_per_interest-1);
         InterestDb.init();
         InterestDb.generate(interest_num, keyword_per_interest);
         ResourceDb.init();
