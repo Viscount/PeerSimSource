@@ -1,6 +1,9 @@
 package field.support;
 
 import field.entity.InterestNode;
+import field.entity.InterestTree;
+import field.util.CommonUtil;
+import peersim.core.CommonState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +13,7 @@ import java.util.List;
  */
 public class InterestDb {
 
-    private static List interestDb;
+    private static List<InterestNode> interestDb;
 
     public static void init(){
         interestDb = new ArrayList();
@@ -30,5 +33,20 @@ public class InterestDb {
             interestNode.setKeywords(keywordList);
             interestDb.add(interestNode);
         }
+    }
+
+    public static InterestNode getInterestById(long interestId){
+        return interestDb.get(Integer.parseInt(String.valueOf(interestId)));
+    }
+
+    public static InterestTree generateTreeForNode(int num_interest){
+        List nodeList = CommonUtil.randomPickFromArray(interestDb,num_interest);
+        InterestTree interestTree = new InterestTree(nodeList);
+        return (interestTree);
+    }
+
+    public static long randomSelectOneInterest(){
+        InterestNode interestNode = (InterestNode)interestDb.get(CommonState.r.nextInt(interestDb.size()));
+        return interestNode.getInterestID();
     }
 }

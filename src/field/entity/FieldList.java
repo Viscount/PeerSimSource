@@ -10,6 +10,10 @@ public class FieldList{
 
     private List<Field> fieldDetail;
 
+    public FieldList(){
+        this.fieldDetail = new ArrayList<Field>();
+    }
+
     public FieldList(List<Field> fieldDetail) {
         this.fieldDetail = fieldDetail;
     }

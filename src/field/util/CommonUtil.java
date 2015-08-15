@@ -1,8 +1,6 @@
 package field.util;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by TongjiSSE on 2015/7/14.
@@ -38,5 +36,23 @@ public class CommonUtil {
             }
         }
         return result;
+    }
+
+    public static <T> List<T> randomPickFromArray(List<T> list, long count) {
+        List<T> cloneArrayList = new ArrayList<T>(list);
+        if (list.size() <= count) {
+            return cloneArrayList;
+        }
+        List<T> resultList = new ArrayList<T>();
+        while (count > 0) {
+            Random random = new Random();
+            long randomIndex = random.nextInt(cloneArrayList.size());
+            T obj = cloneArrayList.get((int)randomIndex);
+            resultList.add(obj);
+            cloneArrayList.remove(obj);
+            count--;
+        }
+
+        return resultList;
     }
 }

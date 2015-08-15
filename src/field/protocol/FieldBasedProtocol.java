@@ -1,6 +1,7 @@
 package field.protocol;
 
 import field.entity.FieldList;
+import field.entity.InterestTree;
 import field.entity.ResourceRepo;
 import field.entity.message.Message;
 import field.handler.Handler;
@@ -20,6 +21,7 @@ public class FieldBasedProtocol extends SingleValueHolder implements EDProtocol{
 
     public static int forward_num;
 
+    public InterestTree interestTree;
     public FieldList field;
     public ResourceRepo resource;
 

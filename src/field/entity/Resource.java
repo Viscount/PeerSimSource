@@ -9,7 +9,7 @@ import java.util.List;
 public class Resource {
 
     private long resourceID;
-    private int interestType;
+    private long interestType;
     private List keywords;
 
     public Resource() {
@@ -24,11 +24,11 @@ public class Resource {
         this.resourceID = resourceID;
     }
 
-    public int getInterestType() {
+    public long getInterestType() {
         return interestType;
     }
 
-    public void setInterestType(int interestType) {
+    public void setInterestType(long interestType) {
         this.interestType = interestType;
     }
 
