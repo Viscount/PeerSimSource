@@ -3,11 +3,11 @@ package field.entity;
 /**
  * Created by TongjiSSE on 2015/7/12.
  */
-public class Field implements Comparable{
+public class Field implements Comparable,Cloneable{
 
     private long fieldID; // ID of field
     private long sourceID; // ID of source node
-    private int typeID; // ID of field interest type
+    private long typeID; // ID of field interest type
     private double decayRate; // Decay rate
     private double potential; // Potential in this node
 
@@ -30,11 +30,11 @@ public class Field implements Comparable{
         this.sourceID = sourceID;
     }
 
-    public int getTypeID() {
+    public long getTypeID() {
         return typeID;
     }
 
-    public void setTypeID(int typeID) {
+    public void setTypeID(long typeID) {
         this.typeID = typeID;
     }
 
@@ -59,5 +59,10 @@ public class Field implements Comparable{
         if ( this.potential > ((Field)o).getPotential() ) return 1;
         else if ( this.potential < ((Field)o).getPotential() ) return -1;
         return 0;
+    }
+
+    @Override
+    protected Field clone() throws CloneNotSupportedException {
+        return (Field)super.clone();
     }
 }

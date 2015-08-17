@@ -40,7 +40,7 @@ public class InterestDb {
     }
 
     public static InterestTree generateTreeForNode(int num_interest){
-        List nodeList = CommonUtil.randomPickFromArray(interestDb,num_interest);
+        List<InterestNode> nodeList = CommonUtil.randomPickFromArray(interestDb,num_interest);
         InterestTree interestTree = new InterestTree(nodeList);
         return (interestTree);
     }

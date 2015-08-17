@@ -1,6 +1,9 @@
 package field.util;
 
+import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.JsonParser;
+import org.codehaus.jackson.JsonToken;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
@@ -25,6 +28,18 @@ public class JsonUtil {
             e.printStackTrace();
             throw new RuntimeException("String TO json failed!");
         }
+    }
+
+    public static String getClassName(String json) throws Exception{
+        JsonFactory jsonFactory = new JsonFactory();
+        JsonParser jp = jsonFactory.createJsonParser(json);
+        jp.nextToken(); // will return JsonToken.START_OBJECT (verify?)
+        while (jp.nextToken() != JsonToken.END_OBJECT) {
+            String fieldname = jp.getCurrentName();
+            jp.nextToken();
+            if (fieldname.equals("_class")) return jp.getText();
+        }
+        return null;
     }
 
     public static <T> T toObject(String json,Class<T> clazz) {

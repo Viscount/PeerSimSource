@@ -1,6 +1,7 @@
 package field.support;
 
 import field.entity.InterestNode;
+import field.entity.InterestTree;
 import field.entity.Resource;
 import field.util.CommonUtil;
 import peersim.core.CommonState;
@@ -19,7 +20,7 @@ public class ResourceDb {
         resourcesDb = new ArrayList();
     }
 
-    public static List generateRepoForNode(int num_resource){
+    public static List generateRepoForNode(InterestTree interestTree,int num_resource){
         return CommonUtil.randomPickFromArray(resourcesDb,num_resource);
     }
 

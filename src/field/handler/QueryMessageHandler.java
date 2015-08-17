@@ -2,6 +2,7 @@ package field.handler;
 
 import field.entity.Field;
 import field.entity.message.Message;
+import field.entity.message.QueryMessage;
 import field.protocol.FieldBasedProtocol;
 import field.util.CommonUtil;
 import field.util.GlobalListener;
@@ -18,10 +19,11 @@ import java.util.List;
 /**
  * Created by TongjiSSE on 2015/7/14.
  */
-public class QueryHandler extends Handler{
+public class QueryMessageHandler extends Handler{
 
     @Override
-    public void handleMessage(Node node, int protocolID, Message message) {
+    public void handleMessage(Node node, int protocolID, Object msg) {
+        QueryMessage message = (QueryMessage) msg;
         int interestType = message.getInterestType();
         FieldBasedProtocol fieldProtocol = (FieldBasedProtocol)node.getProtocol(protocolID);
 

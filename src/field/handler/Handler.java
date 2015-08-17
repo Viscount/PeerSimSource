@@ -8,5 +8,5 @@ import peersim.core.Node;
  */
 public abstract class Handler {
 
-    public abstract void handleMessage(Node node,int protocolID, Message message);
+    public abstract void handleMessage(Node node,int protocolID, Object message);
 }

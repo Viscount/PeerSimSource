@@ -1,10 +1,13 @@
 package field.entity;
 
 import field.entity.message.Message;
+import field.entity.message.QueryMessage;
 import peersim.core.CommonState;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by TongjiSSE on 2015/7/13.
@@ -17,6 +20,10 @@ public class ResourceRepo {
         resourceList = new ArrayList<Resource>();
     }
 
+    public int size(){
+        return resourceList.size();
+    }
+
     public List<Resource> getResourceList() {
         return resourceList;
     }
@@ -25,7 +32,7 @@ public class ResourceRepo {
         this.resourceList = resourceList;
     }
 
-    public List<QueryResult> findResultForQuery(Message message){
+    public List<QueryResult> findResultForQuery(QueryMessage message){
         List queryKeywords = message.getQueryKeywords();
         List<QueryResult> resultList = new ArrayList<QueryResult>();
         for ( Resource resource : resourceList ){
@@ -40,5 +47,19 @@ public class ResourceRepo {
             }
         }
         return resultList;
+    }
+
+    public Map<Long,Integer> findAllInterestType(){
+        Map<Long,Integer> result = new HashMap();
+        for (Resource resource : resourceList){
+            if (!result.containsKey(resource.getInterestType())){
+                result.put(resource.getInterestType(),1);
+            }
+            else {
+                int count = result.get(resource.getInterestType());
+                result.put(resource.getInterestType(),count++);
+            }
+        }
+        return result;
     }
 }

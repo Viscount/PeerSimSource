@@ -60,7 +60,7 @@ public class Initializer implements Control{
             FieldBasedProtocol fieldBasedProtocol = (FieldBasedProtocol)node.getProtocol(pid_fbp);
             fieldBasedProtocol.interestTree = InterestDb.generateTreeForNode(interest_per_node);
             fieldBasedProtocol.resource = new ResourceRepo();
-            fieldBasedProtocol.resource.setResourceList(ResourceDb.generateRepoForNode(resource_per_node));
+            fieldBasedProtocol.resource.setResourceList(ResourceDb.generateRepoForNode(fieldBasedProtocol.interestTree, resource_per_node));
             fieldBasedProtocol.field = new FieldList();
             InterestClusterProtocol interestClusterProtocol = (InterestClusterProtocol)node.getProtocol(pid_icp);
         }
