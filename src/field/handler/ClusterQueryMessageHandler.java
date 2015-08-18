@@ -1,5 +1,6 @@
 package field.handler;
 
+import field.entity.message.ClusterQueryMessage;
 import field.entity.message.Message;
 import field.protocol.FieldBasedProtocol;
 import field.protocol.InterestClusterProtocol;
@@ -14,9 +15,10 @@ import java.util.List;
 /**
  * Created by TongjiSSE on 2015/7/16.
  */
-public class ClusterQueryHandler extends Handler{
+public class ClusterQueryMessageHandler extends Handler{
     @Override
-    public void handleMessage(Node node, int protocolID, Message message) {
+    public void handleMessage(Node node, int protocolID, Object msg) {
+        ClusterQueryMessage message = (ClusterQueryMessage)msg;
         InterestClusterProtocol clusterProtocol = (InterestClusterProtocol)node.getProtocol(protocolID);
         FieldBasedProtocol localFieldProtocol = (FieldBasedProtocol)node.getProtocol(InterestClusterProtocol.field_pid);
 
@@ -26,9 +28,10 @@ public class ClusterQueryHandler extends Handler{
         // TODO result process
 
         // forward in Interest Cluster Layer
-        if ( clusterProtocol.getRingNeighborNode()!= null ){
+        long interestTypeID = message.getInterestType();
+        if ( clusterProtocol.getRingNeighborNode(interestTypeID)!= null ){
             try {
-                Node nextHop = clusterProtocol.getRingNeighborNode();
+                Node nextHop = clusterProtocol.getRingNeighborNode(interestTypeID);
                 Message forward_mess = message.clone();
                 forward_mess.setTTL(message.getTTL()-1);
                 String json = JsonUtil.toJson(forward_mess);
@@ -38,9 +41,9 @@ public class ClusterQueryHandler extends Handler{
                 e.printStackTrace();
             }
         }
-        if ( clusterProtocol.getUpstreamNode() != null ){
+        if ( clusterProtocol.getUpstreamNode(interestTypeID) != null ){
             try {
-                Node nextHop = clusterProtocol.getUpstreamNode();
+                Node nextHop = clusterProtocol.getUpstreamNode(interestTypeID);
                 Message forward_mess = message.clone();
                 forward_mess.setTTL(message.getTTL()-1);
                 String json = JsonUtil.toJson(forward_mess);

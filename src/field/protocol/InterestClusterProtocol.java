@@ -9,6 +9,9 @@ import peersim.core.Node;
 import peersim.edsim.EDProtocol;
 import peersim.vector.SingleValueHolder;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by TongjiSSE on 2015/7/16.
  */
@@ -18,8 +21,9 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
 
     public static int field_pid;
 
-    private Node upstreamNode;
-    private Node ringNeighborNode;
+    private Map<Long,Double> corePotential;
+    private Map<Long, Node> upstreamNode;
+    private Map<Long, Node> ringNeighborNode;
 
 
     public InterestClusterProtocol(String prefix) {
@@ -29,26 +33,46 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
 
     @Override
     public void processEvent(Node node, int pid, Object event) {
-        Message message = JsonUtil.toObject((String) event, Message.class);
+        try {
+            String className = JsonUtil.getClassName((String) event);
+            Class clazz = Class.forName(className);
+            Object message = JsonUtil.toObject((String) event, clazz.getClass());
 
-        Handler handler = HandlerFactory.createHandler(message.getType());
-        if ( handler!=null ) handler.handleMessage(node,pid,message);
-
+            Handler handler = HandlerFactory.createHandler(className);
+            if (handler != null) handler.handleMessage(node, pid, message);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
-    public Node getUpstreamNode() {
-        return upstreamNode;
+    public void init(){
+        this.corePotential = new HashMap();
+        this.upstreamNode = new HashMap();
+        this.ringNeighborNode = new HashMap();
     }
 
-    public void setUpstreamNode(Node upstreamNode) {
-        this.upstreamNode = upstreamNode;
+    public double getCorePotential(long interestTypeID){
+        return corePotential.get(interestTypeID);
     }
 
-    public Node getRingNeighborNode() {
-        return ringNeighborNode;
+    public void setCorePotential(long interestTypeID, double corePotential){
+        this.corePotential.put(interestTypeID,corePotential);
     }
 
-    public void setRingNeighborNode(Node ringNeighborNode) {
-        this.ringNeighborNode = ringNeighborNode;
+    public Node getUpstreamNode(long interestTypeID) {
+        return upstreamNode.get(interestTypeID);
+    }
+
+    public void setUpstreamNode(long interestTypeID, Node upstreamNode) {
+        this.upstreamNode.put(interestTypeID, upstreamNode);
+    }
+
+    public Node getRingNeighborNode(long interestTypeID) {
+        return ringNeighborNode.get(interestTypeID);
+    }
+
+    public void setRingNeighborNode(long interestTypeID, Node ringNeighborNode) {
+        this.ringNeighborNode.put(interestTypeID,ringNeighborNode);
     }
 }

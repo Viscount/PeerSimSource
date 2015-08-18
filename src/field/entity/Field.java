@@ -62,7 +62,7 @@ public class Field implements Comparable,Cloneable{
     }
 
     @Override
-    protected Field clone() throws CloneNotSupportedException {
+    public Field clone() throws CloneNotSupportedException {
         return (Field)super.clone();
     }
 }

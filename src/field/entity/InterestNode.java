@@ -8,7 +8,7 @@ import java.util.List;
 public class InterestNode {
 
     private long interestID;
-    private float weight;
+    private double weight;
     private List<Integer> keywords;
 
     public InterestNode(long interestID) {
@@ -23,11 +23,11 @@ public class InterestNode {
         this.interestID = interestID;
     }
 
-    public float getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

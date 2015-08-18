@@ -43,12 +43,12 @@ public class FieldList{
     public int find(Field field){
         for (int i=0; i<fieldDetail.size(); i++){
             Field f = fieldDetail.get(i);
-            if (f.equals(field)) return i;
+            if (f.getFieldID() == field.getFieldID()) return i;
         }
         return -1;
     }
 
-    public List<Field> findFieldForInterest(int interestType){
+    public List<Field> findFieldForInterest(long interestType){
         List<Field> fieldFilter = new ArrayList<Field>();
         for ( Field field : fieldDetail ){
             if ( field.getTypeID() == interestType ) fieldFilter.add(field);
@@ -56,7 +56,7 @@ public class FieldList{
         return fieldFilter;
     }
 
-    public Field findMaxFieldForInterest(int interestType){
+    public Field findMaxFieldForInterest(long interestType){
         Field result = null;
         double maxPotential = 0;
         for ( Field field : fieldDetail ){

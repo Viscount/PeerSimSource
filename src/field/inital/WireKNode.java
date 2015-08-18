@@ -19,7 +19,7 @@ public class WireKNode extends WireGraph{
 
     public WireKNode(String prefix){
         super(prefix);
-        k = Configuration.getInt(prefix+","+PAR_DEGREE);
+        k = Configuration.getInt(prefix+"."+PAR_DEGREE);
     }
 
     @Override

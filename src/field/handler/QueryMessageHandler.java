@@ -24,13 +24,12 @@ public class QueryMessageHandler extends Handler{
     @Override
     public void handleMessage(Node node, int protocolID, Object msg) {
         QueryMessage message = (QueryMessage) msg;
-        int interestType = message.getInterestType();
+        long interestType = message.getInterestType();
         FieldBasedProtocol fieldProtocol = (FieldBasedProtocol)node.getProtocol(protocolID);
 
         // search in local repo
         List resultList = fieldProtocol.resource.findResultForQuery(message);
         GlobalListener.receiveQueryResult(message.getQueryID(),resultList);
-        // TODO result process
 
 
         // find the highest potential in neighbors

@@ -9,7 +9,7 @@ import java.util.List;
 public class Message implements Cloneable{
 
     private long requester;
-    private int interestType;
+    private long interestType;
     private int TTL;
     private String _class;
 
@@ -24,11 +24,11 @@ public class Message implements Cloneable{
         this.requester = requester;
     }
 
-    public int getInterestType() {
+    public long getInterestType() {
         return interestType;
     }
 
-    public void setInterestType(int interestType) {
+    public void setInterestType(long interestType) {
         this.interestType = interestType;
     }
 
