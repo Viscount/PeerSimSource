@@ -1,7 +1,7 @@
 # network size 
-SIZE 1000 
+SIZE 10
 # parameters of periodic execution 
-CYCLES 10000 
+CYCLES 1000
 CYCLE SIZE*100 
 # parameters of message transfer 
 # delay values here are relative to cycle length, in percentage, 
@@ -19,11 +19,15 @@ simulation.logtime CYCLE
 
 protocol.lnk IdleProtocol
 
-protocol.inf dona.protocol.Infrastructure
-protocol.inf.linkable lnk
-protocol.inf.transport tr
-protocol.inf.mode Multipath
-protocol.inf.path_num 4
+protocol.field field.protocol.FieldBasedProtocol
+protocol.field.linkable lnk
+protocol.field.transport tr
+protocol.field.forward_num 3
+protocol.field.interest_protocol int
+
+protocol.int field.protocol.InterestClusterProtocol
+protocol.int.transport tr
+protocol.int.field_protocol field
 
 protocol.urt UniformRandomTransport 
 protocol.urt.mindelay MINDELAY
@@ -32,25 +36,32 @@ protocol.tr UnreliableTransport
 protocol.tr.transport urt 
 protocol.tr.drop DROP
 
-init.0 dona.initial.WireKNode
+init.0 field.initial.WireKNode
 init.0.protocol lnk
-init.0.k 10
+init.0.k 3
 
-init.1 dona.initial.Initializer
-init.1.inf_protocol inf
+init.1 field.initial.Initializer
+init.1.field_protocol field
+init.1.interest_per_node 3;
+init.1.resource_per_node 100;
+init.1.interest_num 100;
+init.1.resource_num 10000;
+init.1.keyword_per_interest 100;
+init.1.keyword_per_resource 8;
 
-init.2 dona.initial.FilePlacement
-init.2.inf_protocol inf
-init.2.init_source 10
+init.2 field.initial.FieldConstructor
+init.2.field_protocol field
+init.2.interest_protocol int
+init.2.decay_rate 0.9
+init.2.potential_bounder 0.1
+init.2.push_message_ttl 7
+init.2.cluster_layer_step 0.1
 
-init.3 dona.initial.FIBupdater
-init.3.inf_protocol inf
-
-control.0 dona.control.QueryProducer
-control.0.inf_protocol inf
-control.0.query_size 5000
+control.0 field.control.QueryProducer
+control.0.field_protocol field
+control.0.start_time CYCLE*CYCLES/2
 control.0.query_per_cyc 1
 control.0.step CYCLE
 
-control.1 dona.control.IndicatorObserver
+control.1 field.control.ListenerObserver
 control.1.step CYCLE

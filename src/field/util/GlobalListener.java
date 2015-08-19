@@ -14,15 +14,16 @@ import java.util.Map.*;
  */
 public class GlobalListener {
 
-    private static int QUERY_WAITING_WINDOW = 1000;
+    public static long queryIDCounter;
 
-    private static IncrementalStats first_hit_time;
-    private static IncrementalStats first_full_hit_time;
-    private static IncrementalStats num_of_results;
+    public static IncrementalStats first_hit_time;
+    public static IncrementalStats first_full_hit_time;
+    public static IncrementalStats num_of_results;
 
     private static Map<Long,QueryListener> queryListenerMap;
 
     public static void init(){
+        queryIDCounter = 0;
         first_hit_time = new IncrementalStats();
         first_full_hit_time = new IncrementalStats();
         num_of_results = new IncrementalStats();

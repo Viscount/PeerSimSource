@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28605e3b-469a-48a6-8812-195592792ac8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/field/handler/PushMessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/Field.java" afterPath="$PROJECT_DIR$/src/field/entity/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/protocol/FieldBasedProtocol.java" afterPath="$PROJECT_DIR$/src/field/protocol/FieldBasedProtocol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/inital/FieldConstructor.java" afterPath="$PROJECT_DIR$/src/field/inital/FieldConstructor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/FieldList.java" afterPath="$PROJECT_DIR$/src/field/entity/FieldList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/inital/Initializer.java" afterPath="$PROJECT_DIR$/src/field/inital/Initializer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/field/control/ListenerObserver.java" />
+      <change type="DELETED" beforePath="D:\Develop\workspace\PeerSimSource\connection.log" afterPath="" />
+      <change type="DELETED" beforePath="D:\Develop\workspace\PeerSimSource\dona.log" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java" afterPath="$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/util/CommonUtil.java" afterPath="$PROJECT_DIR$/src/field/util/CommonUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/util/GlobalListener.java" afterPath="$PROJECT_DIR$/src/field/util/GlobalListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" afterPath="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/InterestNode.java" afterPath="$PROJECT_DIR$/src/field/entity/InterestNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/InterestTree.java" afterPath="$PROJECT_DIR$/src/field/entity/InterestTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/message/Message.java" afterPath="$PROJECT_DIR$/src/field/entity/message/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/entity/message/PushMessage.java" afterPath="$PROJECT_DIR$/src/field/entity/message/PushMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/handler/QueryMessageHandler.java" afterPath="$PROJECT_DIR$/src/field/handler/QueryMessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/inital/WireKNode.java" afterPath="$PROJECT_DIR$/src/field/inital/WireKNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/util/QueryListener.java" afterPath="$PROJECT_DIR$/src/field/util/QueryListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/control/QueryProducer.java" afterPath="$PROJECT_DIR$/src/field/control/QueryProducer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-example.txt" afterPath="$PROJECT_DIR$/config-example.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Develop\workspace\PeerSimSource\src\field\handler\ClusterQueryHandler.java" afterPath="$PROJECT_DIR$/src/field/handler/ClusterQueryMessageHandler.java" />
     </list>
     <ignored path="PeerSimSource.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,45 +38,9 @@
         <entry file="file://$PROJECT_DIR$/src/field/inital/FieldConstructor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="119" selection-start-line="104" selection-start-column="119" selection-end-line="104" selection-end-column="119" />
+              <caret line="30" column="76" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryMessageHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/field/handler/QueryMessageHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InterestClusterProtocol.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-              <folding>
-                <element signature="e#1612#1613#0" expanded="true" />
-                <element signature="e#1668#1669#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/field/entity/FieldList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-              <folding>
-                <element signature="e#206#207#0" expanded="true" />
-                <element signature="e#263#264#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/field/handler/PushMessageHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+              <caret line="49" column="67" selection-start-line="48" selection-start-column="20" selection-end-line="49" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,21 +58,87 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryProducer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryProducer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/field/control/QueryProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16539717">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="60" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterestClusterProtocol.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="62" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClusterQueryMessageHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/field/handler/ClusterQueryMessageHandler.java">
+      <file leaf-file-name="config-example.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config-example.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListenerObserver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/field/control/ListenerObserver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.28944504">
+              <caret line="14" column="152" selection-start-line="14" selection-start-column="152" selection-end-line="14" selection-end-column="152" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlobalListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/field/util/GlobalListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/field/util/QueryListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="64" column="122" selection-start-line="64" selection-start-column="122" selection-end-line="64" selection-end-column="122" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/field/entity/QueryResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+              <folding>
+                <element signature="e#306#307#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldBasedProtocol.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/field/protocol/FieldBasedProtocol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -147,15 +172,11 @@
         <option value="$PROJECT_DIR$/src/field/util/TopologyUtil.java" />
         <option value="$PROJECT_DIR$/src/field/entity/message/QueryResult.java" />
         <option value="$PROJECT_DIR$/src/field/entity/QueryResult.java" />
-        <option value="$PROJECT_DIR$/src/field/util/QueryListener.java" />
-        <option value="$PROJECT_DIR$/src/field/util/GlobalListener.java" />
         <option value="$PROJECT_DIR$/src/field/support/KeywordDb.java" />
-        <option value="$PROJECT_DIR$/src/field/util/CommonUtil.java" />
         <option value="$PROJECT_DIR$/src/field/entity/Resource.java" />
         <option value="$PROJECT_DIR$/src/field/inital/FieldConstructer.java" />
         <option value="$PROJECT_DIR$/src/field/support/ResourceDb.java" />
         <option value="$PROJECT_DIR$/src/field/support/InterestDb.java" />
-        <option value="$PROJECT_DIR$/src/field/control/QueryProducer.java" />
         <option value="$PROJECT_DIR$/src/field/util/JsonUtil.java" />
         <option value="$PROJECT_DIR$/src/field/handler/Handler.java" />
         <option value="$PROJECT_DIR$/src/field/handler/QueryHandler.java" />
@@ -166,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/field/entity/message/Message.java" />
         <option value="$PROJECT_DIR$/src/field/protocol/FieldBasedProtocol.java" />
         <option value="$PROJECT_DIR$/src/field/inital/WireKNode.java" />
-        <option value="$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java" />
         <option value="$PROJECT_DIR$/src/field/handler/ClusterQueryHandler.java" />
         <option value="$PROJECT_DIR$/src/field/entity/FieldList.java" />
         <option value="$PROJECT_DIR$/src/field/handler/PushMessageHandler.java" />
@@ -175,8 +195,16 @@
         <option value="$PROJECT_DIR$/src/field/entity/InterestNode.java" />
         <option value="$PROJECT_DIR$/src/field/inital/Initializer.java" />
         <option value="$PROJECT_DIR$/src/field/handler/ClusterQueryMessageHandler.java" />
-        <option value="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
         <option value="$PROJECT_DIR$/src/field/inital/FieldConstructor.java" />
+        <option value="$PROJECT_DIR$/src/field/util/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java" />
+        <option value="$PROJECT_DIR$/src/field/control/QueryProducer.java" />
+        <option value="$PROJECT_DIR$/src/field/protocol/RandomWalk.java" />
+        <option value="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
+        <option value="$PROJECT_DIR$/config-example.txt" />
+        <option value="$PROJECT_DIR$/src/field/util/GlobalListener.java" />
+        <option value="$PROJECT_DIR$/src/field/control/ListenerObserver.java" />
+        <option value="$PROJECT_DIR$/src/field/util/QueryListener.java" />
       </list>
     </option>
   </component>
@@ -212,6 +240,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -349,10 +379,6 @@
               <option name="myItemId" value="field" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -373,32 +399,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeerSimSource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeerSimSource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="field" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -426,8 +426,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -677,7 +675,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439823918051</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finish FieldConstructor">
+      <created>1439911478187</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1439911478188</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -699,7 +703,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -729,7 +733,8 @@
     <MESSAGE value="initial function complete" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="Seperate different types of message&#10;add FieldConstructor (unfinished)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seperate different types of message&#10;add FieldConstructor (unfinished)" />
+    <MESSAGE value="finish FieldConstructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish FieldConstructor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -740,13 +745,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/field/util/CommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/entity/Field.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -885,28 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/entity/QueryResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43822077">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-example.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/support/KeywordDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <element signature="e#287#288#0" expanded="false" />
-            <element signature="e#320#321#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,25 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding>
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/util/CommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/util/QueryListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="64" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -956,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40043527">
           <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,54 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18607181">
           <caret line="10" column="81" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/entity/message/PushMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#219#220#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/inital/WireKNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/entity/message/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47551686">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/handler/HandlerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2274211">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/protocol/FieldBasedProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,8 +940,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
           <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#312#313#0" expanded="false" />
+            <element signature="e#358#359#0" expanded="false" />
+            <element signature="e#401#402#0" expanded="false" />
+            <element signature="e#435#436#0" expanded="false" />
+            <element signature="e#494#495#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+            <element signature="e#574#575#0" expanded="false" />
+            <element signature="e#619#620#0" expanded="false" />
+            <element signature="e#1151#1158#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1042,24 +962,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/util/GlobalListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43416756">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/entity/InterestTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding>
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,42 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/support/InterestDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71055496">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/inital/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10337323">
-          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/entity/message/QueryMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51686615">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,21 +992,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/util/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/support/InterestDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/entity/message/QueryMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/entity/message/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <element signature="e#590#591#0" expanded="false" />
+            <element signature="e#638#639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/entity/message/PushMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/entity/message/ClusterQueryMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+          <folding>
+            <element signature="e#164#165#0" expanded="false" />
+            <element signature="e#231#232#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/handler/HandlerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2274211">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/inital/WireKNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/inital/Initializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="82" selection-start-line="24" selection-start-column="3" selection-end-line="29" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/protocol/FieldBasedProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          <folding>
-            <element signature="e#1612#1613#0" expanded="true" />
-            <element signature="e#1668#1669#0" expanded="true" />
-          </folding>
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/field/handler/PushMessageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <caret line="49" column="67" selection-start-line="48" selection-start-column="20" selection-end-line="49" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/control/QueryProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1146,18 +1109,54 @@
     <entry file="file://$PROJECT_DIR$/src/field/inital/FieldConstructor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="119" selection-start-line="104" selection-start-column="119" selection-end-line="104" selection-end-column="119" />
+          <caret line="30" column="76" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/control/QueryProducer.java">
+    <entry file="file://$PROJECT_DIR$/config-example.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16539717">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/entity/QueryResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/util/GlobalListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/util/QueryListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="122" selection-start-line="64" selection-start-column="122" selection-end-line="64" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/control/ListenerObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28944504">
+          <caret line="14" column="152" selection-start-line="14" selection-start-column="152" selection-end-line="14" selection-end-column="152" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

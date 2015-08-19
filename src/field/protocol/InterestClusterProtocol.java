@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class InterestClusterProtocol extends SingleValueHolder implements EDProtocol {
 
-    private static final String PAR_FIELD_PID = "field_pid";
+    private static final String PAR_PROT_FBP = "field_protocol";
 
     public static int field_pid;
 
@@ -28,7 +28,7 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
 
     public InterestClusterProtocol(String prefix) {
         super(prefix);
-        field_pid = Configuration.getInt(prefix+"."+PAR_FIELD_PID);
+        field_pid = Configuration.getInt(prefix+"."+PAR_PROT_FBP);
     }
 
     @Override

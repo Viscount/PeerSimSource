@@ -59,10 +59,10 @@ public class QueryListener {
         if ( resultList.size() > 0 ){
             for ( QueryResult queryResult : resultList ){
                 if ( queryResult.getHit_num() > 0 ){
-                    if ( first_hit_time == 0 ) first_hit_time = queryResult.getHit_timestamp();
+                    if ( first_hit_time == 0 ) first_hit_time = queryResult.getHit_timestamp() - start_up_time;
                     resultSet.add(queryResult.getResourceID());
                     if ( queryResult.getHit_num() == CommonUtil.MAX_NUM_QUERY_KEYWORDS ){
-                        if ( first_full_hit_time == 0 ) first_full_hit_time = queryResult.getHit_timestamp();
+                        if ( first_full_hit_time == 0 ) first_full_hit_time = queryResult.getHit_timestamp()-start_up_time;
                     }
                 }
             }
