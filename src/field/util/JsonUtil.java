@@ -34,10 +34,13 @@ public class JsonUtil {
         JsonFactory jsonFactory = new JsonFactory();
         JsonParser jp = jsonFactory.createJsonParser(json);
         jp.nextToken(); // will return JsonToken.START_OBJECT (verify?)
-        while (jp.nextToken() != JsonToken.END_OBJECT) {
-            String fieldname = jp.getCurrentName();
+        while (jp.nextToken() != null) {
+            String fieldName = jp.getCurrentName();
+            if (fieldName.equals("_class")){
+                String className = jp.getText();
+                return className;
+            }
             jp.nextToken();
-            if (fieldname.equals("_class")) return jp.getText();
         }
         return null;
     }

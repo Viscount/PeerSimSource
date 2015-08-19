@@ -54,7 +54,7 @@ public class QueryMessageHandler extends Handler{
             // find the highest top n potential in neighbors
             try {
                 List<Field> candidateNextHop = CommonUtil.findTopN(allCandidateField, FieldBasedProtocol.forward_num);
-                Message forward_mess = message.clone();
+                QueryMessage forward_mess = message.clone();
                 forward_mess.setTTL(message.getTTL() - 1);
                 String json = JsonUtil.toJson(forward_mess);
                 for (Field field : candidateNextHop) {

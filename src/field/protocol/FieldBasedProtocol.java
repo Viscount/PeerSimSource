@@ -38,7 +38,7 @@ public class FieldBasedProtocol extends SingleValueHolder implements EDProtocol{
         try {
             String className = JsonUtil.getClassName((String) event);
             Class clazz = Class.forName(className);
-            Object message = JsonUtil.toObject((String) event, clazz.getClass());
+            Object message = JsonUtil.toObject((String) event, clazz);
 
             Handler handler = HandlerFactory.createHandler(className);
             if (handler != null) handler.handleMessage(node, pid, message);

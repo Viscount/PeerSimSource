@@ -1,7 +1,6 @@
-package field.inital;
+package field.initial;
 
 import field.entity.Field;
-import field.entity.Resource;
 import field.entity.message.PushMessage;
 import field.protocol.FieldBasedProtocol;
 import field.protocol.InterestClusterProtocol;
@@ -15,7 +14,6 @@ import peersim.transport.Transport;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -65,7 +63,7 @@ public class FieldConstructor implements Control {
                 field.setTypeID(interestTypeID);
                 field.setSourceID(i);
                 field.setDecayRate(decay_rate);
-                field.setPotential((double) entry.getValue() / currentFbp.resource.size());
+                field.setPotential( (int)entry.getValue()*1.0 / currentFbp.resource.size());
 
                 currentFbp.interestTree.setInterestWeight(interestTypeID,field.getPotential());
                 // add node to interest cluster

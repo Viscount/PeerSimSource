@@ -2,7 +2,7 @@ package field.handler;
 
 import field.entity.Field;
 import field.entity.message.PushMessage;
-import field.inital.FieldConstructor;
+import field.initial.FieldConstructor;
 import field.protocol.FieldBasedProtocol;
 import field.util.JsonUtil;
 import field.util.TopologyUtil;

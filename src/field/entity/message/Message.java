@@ -14,6 +14,7 @@ public class Message implements Cloneable{
     private String _class;
 
     public Message() {
+        this.set_class(Message.class.getName());
     }
 
     public long getRequester() {

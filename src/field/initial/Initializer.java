@@ -1,9 +1,8 @@
-package field.inital;
+package field.initial;
 
 import field.entity.FieldList;
 import field.entity.ResourceRepo;
 import field.protocol.FieldBasedProtocol;
-import field.protocol.InterestClusterProtocol;
 import field.support.InterestDb;
 import field.support.KeywordDb;
 import field.support.ResourceDb;
@@ -12,8 +11,6 @@ import peersim.config.Configuration;
 import peersim.core.Control;
 import peersim.core.Network;
 import peersim.core.Node;
-
-import java.util.ArrayList;
 
 /**
  * Created by TongjiSSE on 2015/8/11.

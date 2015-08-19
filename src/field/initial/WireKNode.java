@@ -1,4 +1,4 @@
-package field.inital;
+package field.initial;
 
 import peersim.config.Configuration;
 import peersim.core.CommonState;

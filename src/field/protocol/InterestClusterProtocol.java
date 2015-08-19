@@ -28,7 +28,7 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
 
     public InterestClusterProtocol(String prefix) {
         super(prefix);
-        field_pid = Configuration.getInt(prefix+"."+PAR_PROT_FBP);
+        field_pid = Configuration.getPid(prefix+"."+PAR_PROT_FBP);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
         try {
             String className = JsonUtil.getClassName((String) event);
             Class clazz = Class.forName(className);
-            Object message = JsonUtil.toObject((String) event, clazz.getClass());
+            Object message = JsonUtil.toObject((String) event, clazz);
 
             Handler handler = HandlerFactory.createHandler(className);
             if (handler != null) handler.handleMessage(node, pid, message);

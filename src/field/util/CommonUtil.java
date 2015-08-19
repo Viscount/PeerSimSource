@@ -57,4 +57,10 @@ public class CommonUtil {
 
         return resultList;
     }
+
+    public static String convert2SimpleName(String classFullName){
+        StringBuffer stringBuffer = new StringBuffer(classFullName);
+        int pos = stringBuffer.lastIndexOf(".");
+        return stringBuffer.substring(pos+1);
+    }
 }
