@@ -40,9 +40,9 @@ public class Resource {
         keywords = keywords;
     }
 
-    public int matchKeywords(List<String> queryList){
+    public int matchKeywords(List<Long> queryList){
         int count = 0;
-        for ( String keyword : queryList){
+        for ( long keyword : queryList){
             if ( this.keywords.contains(keyword) ) count++;
         }
         return count;

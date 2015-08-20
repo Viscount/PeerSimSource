@@ -44,8 +44,8 @@ init.1 field.initial.Initializer
 init.1.field_protocol fbp
 init.1.interest_per_node 3;
 init.1.resource_per_node 100;
-init.1.interest_num 100;
-init.1.resource_num 10000;
+init.1.interest_num 10;
+init.1.resource_num 1000;
 init.1.keyword_per_interest 100;
 init.1.keyword_per_resource 8;
 

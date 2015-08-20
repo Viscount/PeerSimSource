@@ -1,5 +1,9 @@
 package field.control;
 
+import field.entity.Field;
+import field.entity.FieldList;
+import field.protocol.FieldBasedProtocol;
+import field.util.JsonUtil;
 import field.util.TopologyUtil;
 import peersim.config.Configuration;
 import peersim.core.Control;
@@ -34,10 +38,17 @@ public class TopologyObserver implements Control{
                 Node currentNode = Network.get(i);
                 List<Node> neighbors = TopologyUtil.getNeighbors(currentNode, pid_fbp);
                 fwriter.write("Node "+i+":\r\n");
+                fwriter.write("Neighbors : ");
                 for ( Node node : neighbors){
                     fwriter.write(node.getID()+",");
                 }
                 fwriter.write("\r\n");
+                FieldBasedProtocol fbp = (FieldBasedProtocol)currentNode.getProtocol(pid_fbp);
+                fwriter.write("Field List : ");
+                List<Field> fieldList = fbp.field.getFieldDetail();
+                for ( Field field : fieldList ){
+                    fwriter.write(JsonUtil.toJson(field)+"\r\n");
+                }
             }
             fwriter.close();
         }

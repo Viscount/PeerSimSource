@@ -1,70 +1,35 @@
 package field.util;
 
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.JsonToken;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
-
-import java.io.IOException;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 /**
  * Created by TongjiSSE on 2015/7/14.
  */
 public class JsonUtil {
 
-    private static final ObjectMapper mapper;
+    private static final Gson gson;
 
     static {
-        mapper = new ObjectMapper();
+        gson = new Gson();
     }
 
+
     public static String toJson(Object obj) {
-        try {
-            return mapper.writeValueAsString(obj);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("String TO json failed!");
-        }
+        return gson.toJson(obj);
     }
 
     public static String getClassName(String json) throws Exception{
-        JsonFactory jsonFactory = new JsonFactory();
-        JsonParser jp = jsonFactory.createJsonParser(json);
-        jp.nextToken(); // will return JsonToken.START_OBJECT (verify?)
-        while (jp.nextToken() != null) {
-            String fieldName = jp.getCurrentName();
-            if (fieldName.equals("_class")){
-                String className = jp.getText();
-                return className;
-            }
-            jp.nextToken();
-        }
+        JsonParser jsonParser = new JsonParser();
+        JsonObject jsonObject = jsonParser.parse(json).getAsJsonObject();
+        JsonElement element = jsonObject.get("_class");
+        if ( element!= null) return element.getAsString();
         return null;
     }
 
     public static <T> T toObject(String json,Class<T> clazz) {
-        try {
-            return mapper.readValue(json, clazz);
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Json to String failed!");
-        }
-    }
-
-    @SuppressWarnings("rawtypes")
-    public static Object deserialize(String jsonText, TypeReference type) {
-        try {
-            return mapper.readValue(jsonText, type);
-        } catch (JsonParseException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return gson.fromJson(json,clazz);
     }
 }

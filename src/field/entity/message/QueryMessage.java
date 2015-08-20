@@ -6,7 +6,7 @@ import java.util.List;
  * Created by TongjiSSE on 2015/8/17.
  */
 public class QueryMessage extends Message implements Cloneable{
-    private List queryKeywords;
+    private List<Long> queryKeywords;
     private long queryID;
 
     public QueryMessage(){

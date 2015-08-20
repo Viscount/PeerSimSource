@@ -25,7 +25,7 @@ public class InterestDb {
         long counter = 0;
         for (int i=0; i<num_int; i++){
             InterestNode interestNode = new InterestNode(i);
-            List keywordList = new ArrayList();
+            List<Long> keywordList = new ArrayList();
             for (int j=0; j<keyword_per_int; j++){
                 keywordList.add(counter);
                 counter++;

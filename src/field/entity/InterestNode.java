@@ -9,7 +9,7 @@ public class InterestNode {
 
     private long interestID;
     private double weight;
-    private List<Integer> keywords;
+    private List<Long> keywords;
 
     public InterestNode(long interestID) {
         this.interestID = interestID;
@@ -31,11 +31,11 @@ public class InterestNode {
         this.weight = weight;
     }
 
-    public List<Integer> getKeywords() {
+    public List<Long> getKeywords() {
         return keywords;
     }
 
-    public void setKeywords(List<Integer> keywords) {
+    public void setKeywords(List<Long> keywords) {
         this.keywords = keywords;
     }
 }

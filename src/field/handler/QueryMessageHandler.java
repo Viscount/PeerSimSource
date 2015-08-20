@@ -1,6 +1,7 @@
 package field.handler;
 
 import field.entity.Field;
+import field.entity.message.ClusterQueryMessage;
 import field.entity.message.Message;
 import field.entity.message.QueryMessage;
 import field.protocol.FieldBasedProtocol;
@@ -24,6 +25,7 @@ public class QueryMessageHandler extends Handler{
     @Override
     public void handleMessage(Node node, int protocolID, Object msg) {
         QueryMessage message = (QueryMessage) msg;
+        if ( message.getTTL() < 0 ) return;
         long interestType = message.getInterestType();
         FieldBasedProtocol fieldProtocol = (FieldBasedProtocol)node.getProtocol(protocolID);
 
@@ -46,9 +48,18 @@ public class QueryMessageHandler extends Handler{
         List<Field> localCandidateField = fieldProtocol.field.findFieldForInterest(interestType);
         Field localMaxField = CommonUtil.findMax(localCandidateField);
 
-        if ( localMaxField.compareTo(maxCandidate) > 0 ){
+        if (( localMaxField!=null )&&( localMaxField.compareTo(maxCandidate) > 0 )){
             // reach a publisher
             // TODO switch message type
+            try {
+                ClusterQueryMessage clusterQueryMessage = (ClusterQueryMessage) (message.clone());
+                String json = JsonUtil.toJson(clusterQueryMessage);
+                ((Transport) node.getProtocol(FastConfig.getTransport(FieldBasedProtocol.pid_icp))).
+                        send(node, node, json, FieldBasedProtocol.pid_icp);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
         else {
             // find the highest top n potential in neighbors

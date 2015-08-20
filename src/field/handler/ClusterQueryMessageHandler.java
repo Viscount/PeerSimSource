@@ -19,6 +19,7 @@ public class ClusterQueryMessageHandler extends Handler{
     @Override
     public void handleMessage(Node node, int protocolID, Object msg) {
         ClusterQueryMessage message = (ClusterQueryMessage)msg;
+        if ( message.getTTL() < 0 ) return;
         InterestClusterProtocol clusterProtocol = (InterestClusterProtocol)node.getProtocol(protocolID);
         FieldBasedProtocol localFieldProtocol = (FieldBasedProtocol)node.getProtocol(InterestClusterProtocol.field_pid);
 

@@ -57,7 +57,8 @@ public class ResourceRepo {
             }
             else {
                 int count = result.get(resource.getInterestType());
-                result.put(resource.getInterestType(),count++);
+                count++;
+                result.put(resource.getInterestType(),count);
             }
         }
         return result;

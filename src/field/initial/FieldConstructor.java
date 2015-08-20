@@ -60,6 +60,7 @@ public class FieldConstructor implements Control {
 
                 Field field = new Field();
                 field.setFieldID(counter);
+                counter++;
                 field.setTypeID(interestTypeID);
                 field.setSourceID(i);
                 field.setDecayRate(decay_rate);
