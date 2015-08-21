@@ -2,6 +2,7 @@ package field.control;
 
 import field.entity.Field;
 import field.entity.FieldList;
+import field.entity.InterestTree;
 import field.protocol.FieldBasedProtocol;
 import field.util.JsonUtil;
 import field.util.TopologyUtil;
@@ -49,6 +50,9 @@ public class TopologyObserver implements Control{
                 for ( Field field : fieldList ){
                     fwriter.write(JsonUtil.toJson(field)+"\r\n");
                 }
+                fwriter.write("Interest Tree : ");
+                InterestTree interestTree = fbp.interestTree;
+                fwriter.write(JsonUtil.toJson(interestTree)+"\r\n");
             }
             fwriter.close();
         }

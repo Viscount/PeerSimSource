@@ -29,9 +29,10 @@ public class QueryMessage extends Message implements Cloneable{
         this.queryID = queryID;
     }
 
-    public QueryMessage clone() throws CloneNotSupportedException{
-        QueryMessage cloned = (QueryMessage)super.clone();
-        cloned.queryKeywords.addAll(queryKeywords);
-        return (cloned);
+    public Object clone() throws CloneNotSupportedException{
+//        QueryMessage cloned = (QueryMessage)super.clone();
+//        cloned.queryKeywords.addAll(queryKeywords);
+//        return (cloned);
+        return super.clone();
     }
 }

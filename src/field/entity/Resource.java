@@ -37,7 +37,7 @@ public class Resource {
     }
 
     public void setKeywords(List keywords) {
-        keywords = keywords;
+        this.keywords = keywords;
     }
 
     public int matchKeywords(List<Long> queryList){

@@ -39,6 +39,7 @@ public class QueryProducer implements Control{
     public boolean execute() {
         if ( CommonState.getTime() < start_time ) return false;
         for (int i=0; i<query_per_cycle; i++){
+            GlobalListener.addNewListener(GlobalListener.queryIDCounter);
             QueryMessage queryMessage = new QueryMessage();
             queryMessage.setQueryID(GlobalListener.queryIDCounter);
             queryMessage.setTTL(CommonUtil.MAX_MESSAGE_TTL);

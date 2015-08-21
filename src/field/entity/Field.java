@@ -56,6 +56,7 @@ public class Field implements Comparable,Cloneable{
 
     @Override
     public int compareTo(Object o) {
+        if ( o == null ) return 1;
         if ( this.potential > ((Field)o).getPotential() ) return 1;
         else if ( this.potential < ((Field)o).getPotential() ) return -1;
         return 0;

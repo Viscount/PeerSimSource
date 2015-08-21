@@ -40,7 +40,7 @@ public class QueryMessageHandler extends Handler{
         for ( Node neighbor : neighbors ){
             FieldBasedProtocol neighborProtocol = (FieldBasedProtocol)neighbor.getProtocol(protocolID);
             Field maxField = neighborProtocol.field.findMaxFieldForInterest(interestType);
-            allCandidateField.add(maxField);
+            if ( maxField!=null ) allCandidateField.add(maxField);
         }
         Field maxCandidate = CommonUtil.findMax(allCandidateField);
 
@@ -52,7 +52,7 @@ public class QueryMessageHandler extends Handler{
             // reach a publisher
             // TODO switch message type
             try {
-                ClusterQueryMessage clusterQueryMessage = (ClusterQueryMessage) (message.clone());
+                ClusterQueryMessage clusterQueryMessage = new ClusterQueryMessage(message);
                 String json = JsonUtil.toJson(clusterQueryMessage);
                 ((Transport) node.getProtocol(FastConfig.getTransport(FieldBasedProtocol.pid_icp))).
                         send(node, node, json, FieldBasedProtocol.pid_icp);
@@ -64,13 +64,17 @@ public class QueryMessageHandler extends Handler{
         else {
             // find the highest top n potential in neighbors
             try {
-                List<Field> candidateNextHop = CommonUtil.findTopN(allCandidateField, FieldBasedProtocol.forward_num);
-                QueryMessage forward_mess = message.clone();
+                List<Field> candidateNextHopField = CommonUtil.findTopN(allCandidateField, FieldBasedProtocol.forward_num);
+                List<Node> candidateNextHop = new ArrayList();
+                for ( Field field : candidateNextHopField ){
+                    long nodeID = field.getSourceID();
+                    candidateNextHop.add(Network.get(Integer.parseInt(Long.toString(nodeID))));
+                }
+                if (candidateNextHop.size() == 0) candidateNextHop.addAll(TopologyUtil.getNeighbors(node, protocolID));
+                QueryMessage forward_mess = (QueryMessage)message.clone();
                 forward_mess.setTTL(message.getTTL() - 1);
                 String json = JsonUtil.toJson(forward_mess);
-                for (Field field : candidateNextHop) {
-                    long nodeID = field.getSourceID();
-                    Node nexthop = Network.get(Integer.parseInt(Long.toString(nodeID)));
+                for (Node nexthop : candidateNextHop) {
                     ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
                             send(node, nexthop, json, protocolID);
                 }

@@ -1,5 +1,7 @@
 package field.util;
 
+import peersim.core.CommonState;
+
 import java.util.*;
 
 /**
@@ -9,7 +11,6 @@ public class CommonUtil {
 
     public static int MAX_MESSAGE_TTL = 7;
     public static int MAX_NUM_QUERY_KEYWORDS = 3;
-    public static long RANDOM_SEED = 123456789;
 
     public static <T extends Comparable< ? super T>> T findMax( List<T> list ){
         T result = null;
@@ -45,10 +46,8 @@ public class CommonUtil {
             return cloneArrayList;
         }
         List<T> resultList = new ArrayList<T>();
-        while (count > 0) {
-            Random random = new Random();
-            random.setSeed(RANDOM_SEED);
-            long randomIndex = random.nextInt(cloneArrayList.size());
+        while ((count > 0)&&(cloneArrayList.size()>0)) {
+            long randomIndex = CommonState.r.nextInt(cloneArrayList.size());
             T obj = cloneArrayList.get((int)randomIndex);
             resultList.add(obj);
             cloneArrayList.remove(obj);

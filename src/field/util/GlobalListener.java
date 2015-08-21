@@ -1,6 +1,7 @@
 package field.util;
 
 import field.entity.QueryResult;
+import peersim.core.CommonState;
 import peersim.util.IncrementalStats;
 
 import java.util.HashMap;
@@ -30,6 +31,11 @@ public class GlobalListener {
         queryListenerMap = new HashMap<Long,QueryListener>();
     }
 
+    public static void addNewListener(long queryID){
+        QueryListener queryListener = new QueryListener(CommonState.getTime());
+        queryListenerMap.put(queryID,queryListener);
+    }
+
     public static void receiveQueryResult(long queryID, List<QueryResult> queryResultList){
         if ( queryListenerMap.containsKey(queryID) ){
             QueryListener queryListener = queryListenerMap.get(queryID);
@@ -42,7 +48,7 @@ public class GlobalListener {
             Entry<Long,QueryListener> entry = (Entry)it.next();
             QueryListener queryListener = entry.getValue();
             first_hit_time.add(queryListener.getFirst_hit_time());
-            first_full_hit_time.add(queryListener.getFirst_full_hit_time());
+            if (queryListener.getFirst_full_hit_time()!=0) first_full_hit_time.add(queryListener.getFirst_full_hit_time());
             num_of_results.add(queryListener.getResultSet().size());
         }
     }

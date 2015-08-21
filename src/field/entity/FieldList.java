@@ -60,7 +60,7 @@ public class FieldList{
         Field result = null;
         double maxPotential = 0;
         for ( Field field : fieldDetail ){
-            if ( field.getPotential() > maxPotential ){
+            if (( field.getTypeID() == interestType )&&( field.getPotential() > maxPotential )){
                 maxPotential = field.getPotential();
                 result = field;
             }

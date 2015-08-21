@@ -8,8 +8,17 @@ public class ClusterQueryMessage extends QueryMessage implements Cloneable{
         this.set_class(ClusterQueryMessage.class.getName());
     }
 
-    public ClusterQueryMessage clone() throws CloneNotSupportedException{
-        return (ClusterQueryMessage)super.clone();
+    public ClusterQueryMessage(QueryMessage queryMessage){
+        this.set_class(ClusterQueryMessage.class.getName());
+        this.setRequester(queryMessage.getRequester());
+        this.setQueryID(queryMessage.getQueryID());
+        this.setInterestType(queryMessage.getInterestType());
+        this.setTTL(queryMessage.getTTL());
+        this.setQueryKeywords(queryMessage.getQueryKeywords());
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
     }
 
 }

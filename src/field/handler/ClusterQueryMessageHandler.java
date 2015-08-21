@@ -33,7 +33,7 @@ public class ClusterQueryMessageHandler extends Handler{
         if ( clusterProtocol.getRingNeighborNode(interestTypeID)!= null ){
             try {
                 Node nextHop = clusterProtocol.getRingNeighborNode(interestTypeID);
-                ClusterQueryMessage forward_mess = message.clone();
+                ClusterQueryMessage forward_mess = (ClusterQueryMessage)message.clone();
                 forward_mess.setTTL(message.getTTL()-1);
                 String json = JsonUtil.toJson(forward_mess);
                 ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
@@ -45,7 +45,7 @@ public class ClusterQueryMessageHandler extends Handler{
         if ( clusterProtocol.getUpstreamNode(interestTypeID) != null ){
             try {
                 Node nextHop = clusterProtocol.getUpstreamNode(interestTypeID);
-                ClusterQueryMessage forward_mess = message.clone();
+                ClusterQueryMessage forward_mess = (ClusterQueryMessage)message.clone();
                 forward_mess.setTTL(message.getTTL()-1);
                 String json = JsonUtil.toJson(forward_mess);
                 ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).

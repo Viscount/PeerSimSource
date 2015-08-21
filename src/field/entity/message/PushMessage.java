@@ -21,9 +21,7 @@ public class PushMessage extends Message implements Cloneable{
         this.field = field;
     }
 
-    public PushMessage clone() throws CloneNotSupportedException{
-        PushMessage cloned = (PushMessage)super.clone();
-        cloned.field = field.clone();
-        return cloned;
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
     }
 }

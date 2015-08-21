@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by TongjiSSE on 2015/7/13.
  */
-public class Message implements Cloneable{
+public class Message{
 
     private long requester;
     private long interestType;
@@ -49,8 +49,8 @@ public class Message implements Cloneable{
         this._class = _class;
     }
 
-    @Override
-    public Message clone() throws CloneNotSupportedException {
-        return (Message)super.clone();
-    }
+//    @Override
+//    public Message clone() throws CloneNotSupportedException {
+//        return this.clone();
+//    }
 }

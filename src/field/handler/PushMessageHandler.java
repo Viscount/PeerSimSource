@@ -24,13 +24,15 @@ public class PushMessageHandler extends Handler{
         boolean isUpdate = false;
         int isExist = fieldProtocol.field.find(msgField);
         if ( isExist == -1 ){
-            fieldProtocol.field.add(message.getField());
+            msgField.setSourceID(node.getID());
+            fieldProtocol.field.add(msgField);
             isUpdate = true;
         }
         else{
             Field currentField = fieldProtocol.field.get(isExist);
             if ( currentField.getPotential() < msgField.getPotential() ){
                 fieldProtocol.field.remove(isExist);
+                msgField.setSourceID(node.getID());
                 fieldProtocol.field.add(msgField);
                 isUpdate = true;
             }
@@ -41,7 +43,7 @@ public class PushMessageHandler extends Handler{
                 Field newField = msgField.clone();
                 newField.setPotential(msgField.getPotential()*msgField.getDecayRate());
                 if ( newField.getPotential() < FieldConstructor.potential_bounder ) return;
-                PushMessage newPushMessage = message.clone();
+                PushMessage newPushMessage = (PushMessage)message.clone();
                 newPushMessage.setField(newField);
                 String json = JsonUtil.toJson(newPushMessage);
                 List<Node> neighbors = TopologyUtil.getNeighbors(node, protocolID);
