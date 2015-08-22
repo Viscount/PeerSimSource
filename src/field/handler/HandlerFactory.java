@@ -1,5 +1,6 @@
 package field.handler;
 
+import field.protocol.FieldBasedProtocol;
 import field.util.CommonUtil;
 
 /**
@@ -9,7 +10,7 @@ public class HandlerFactory {
 
     public static Handler createHandler(String handlerType){
         try {
-            Class<?> handler = Class.forName("field.handler."+ CommonUtil.convert2SimpleName(handlerType)+"Handler");
+            Class<?> handler = Class.forName("field.handler." + FieldBasedProtocol.route_method + CommonUtil.convert2SimpleName(handlerType)+"Handler");
             Handler instanceHandler = (Handler)handler.newInstance();
             return instanceHandler;
         }

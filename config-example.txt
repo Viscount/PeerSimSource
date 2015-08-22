@@ -1,7 +1,7 @@
 # network size 
-SIZE 10
+SIZE 1000
 # parameters of periodic execution 
-CYCLES 1000
+CYCLES 10000
 CYCLE SIZE*100 
 # parameters of message transfer 
 # delay values here are relative to cycle length, in percentage, 
@@ -24,6 +24,7 @@ protocol.fbp.linkable lnk
 protocol.fbp.transport tr
 protocol.fbp.forward_num 3
 protocol.fbp.interest_protocol int
+protocol.fbp.route_method RandomWalk
 
 protocol.int field.protocol.InterestClusterProtocol
 protocol.int.transport tr
@@ -42,10 +43,10 @@ init.0.k 3
 
 init.1 field.initial.Initializer
 init.1.field_protocol fbp
-init.1.interest_per_node 3;
-init.1.resource_per_node 100;
-init.1.interest_num 10;
-init.1.resource_num 1000;
+init.1.interest_per_node 5;
+init.1.resource_per_node 500;
+init.1.interest_num 100;
+init.1.resource_num 10000;
 init.1.keyword_per_interest 100;
 init.1.keyword_per_resource 8;
 
@@ -60,13 +61,13 @@ init.2.cluster_layer_step 0.1
 control.0 field.control.QueryProducer
 control.0.field_protocol fbp
 control.0.start_time CYCLE*CYCLES/2
-control.0.query_per_cycle 1
+control.0.query_per_cycle 10
 control.0.step CYCLE
 
 control.1 field.control.ListenerObserver
 control.1.step CYCLE
 
-control.2 field.control.TopologyObserver
-control.2.field_protocol fbp
-control.2.log_file_name topology.log
-control.2.step CYCLE
+# control.2 field.control.TopologyObserver
+# control.2.field_protocol fbp
+# control.2.log_file_name topology.log
+# control.2.step CYCLE

@@ -18,10 +18,12 @@ import peersim.vector.SingleValueHolder;
 public class FieldBasedProtocol extends SingleValueHolder implements EDProtocol{
 
     private static final String PAR_FORWARD_NUM = "forward_num";
-    private static final String PAR_PAR_PROT_ICP = "interest_protocol";
+    private static final String PAR_PROT_ICP = "interest_protocol";
+    private static final String PAR_ROUTE_METHOD = "route_method";
 
     public static int forward_num;
     public static int pid_icp;
+    public static String route_method;
 
     public InterestTree interestTree;
     public FieldList field;
@@ -30,7 +32,9 @@ public class FieldBasedProtocol extends SingleValueHolder implements EDProtocol{
     public FieldBasedProtocol(String prefix) {
         super(prefix);
         forward_num = Configuration.getInt(prefix+"."+PAR_FORWARD_NUM);
-        pid_icp = Configuration.getPid(prefix+"."+PAR_PAR_PROT_ICP);
+        pid_icp = Configuration.getPid(prefix+"."+PAR_PROT_ICP);
+        route_method = Configuration.getString(prefix+"."+PAR_ROUTE_METHOD);
+        if ( route_method.equals("default") ) route_method = "";
     }
 
     @Override
