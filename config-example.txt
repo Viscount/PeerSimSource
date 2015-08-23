@@ -24,7 +24,7 @@ protocol.fbp.linkable lnk
 protocol.fbp.transport tr
 protocol.fbp.forward_num 3
 protocol.fbp.interest_protocol int
-protocol.fbp.route_method RandomWalk
+protocol.fbp.route_method MBFS
 
 protocol.int field.protocol.InterestClusterProtocol
 protocol.int.transport tr
@@ -39,7 +39,7 @@ protocol.tr.drop DROP
 
 init.0 field.initial.WireKNode
 init.0.protocol lnk
-init.0.k 3
+init.0.k 10
 
 init.1 field.initial.Initializer
 init.1.field_protocol fbp
