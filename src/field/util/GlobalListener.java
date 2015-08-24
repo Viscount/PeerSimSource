@@ -16,6 +16,7 @@ import java.util.Map.*;
 public class GlobalListener {
 
     public static long queryIDCounter;
+    public static long messageCounter;
 
     public static IncrementalStats first_hit_time;
     public static IncrementalStats first_full_hit_time;
@@ -25,6 +26,7 @@ public class GlobalListener {
 
     public static void init(){
         queryIDCounter = 0;
+        messageCounter = 0;
         first_hit_time = new IncrementalStats();
         first_full_hit_time = new IncrementalStats();
         num_of_results = new IncrementalStats();

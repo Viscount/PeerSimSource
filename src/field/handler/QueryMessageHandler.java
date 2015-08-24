@@ -56,6 +56,7 @@ public class QueryMessageHandler extends Handler{
                 String json = JsonUtil.toJson(clusterQueryMessage);
                 ((Transport) node.getProtocol(FastConfig.getTransport(FieldBasedProtocol.pid_icp))).
                         send(node, node, json, FieldBasedProtocol.pid_icp);
+                GlobalListener.messageCounter++;
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -77,6 +78,7 @@ public class QueryMessageHandler extends Handler{
                 for (Node nexthop : candidateNextHop) {
                     ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
                             send(node, nexthop, json, protocolID);
+                    GlobalListener.messageCounter++;
                 }
             } catch ( Exception e){
                 e.printStackTrace();

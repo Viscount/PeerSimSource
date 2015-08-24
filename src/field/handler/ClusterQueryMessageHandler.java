@@ -38,6 +38,7 @@ public class ClusterQueryMessageHandler extends Handler{
                 String json = JsonUtil.toJson(forward_mess);
                 ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
                         send(node, nextHop, json, protocolID);
+                GlobalListener.messageCounter++;
             }catch( Exception e ){
                 e.printStackTrace();
             }
@@ -50,6 +51,7 @@ public class ClusterQueryMessageHandler extends Handler{
                 String json = JsonUtil.toJson(forward_mess);
                 ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
                         send(node, nextHop, json, protocolID);
+                GlobalListener.messageCounter++;
             }catch( Exception e ){
                 e.printStackTrace();
             }

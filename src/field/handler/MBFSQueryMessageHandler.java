@@ -41,6 +41,7 @@ public class MBFSQueryMessageHandler extends Handler{
                     if (CommonState.r.nextFloat() > prob ) {
                         ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
                                 send(node, nextNode, json, protocolID);
+                        GlobalListener.messageCounter++;
                     }
                 }
             }

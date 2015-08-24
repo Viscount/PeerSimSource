@@ -18,6 +18,7 @@ public class ListenerObserver implements Control{
         System.out.println("Num of Result:" + GlobalListener.num_of_results.getAverage() + " " + GlobalListener.num_of_results.getStD());
         System.out.println("First hit time:" + GlobalListener.first_hit_time.getAverage() + " " + GlobalListener.first_hit_time.getStD());
         System.out.println("First full hit time:" + GlobalListener.first_full_hit_time.getAverage() + " " + GlobalListener.first_full_hit_time.getStD());
+        System.out.println("Total Message: " + GlobalListener.messageCounter);
         return false;
     }
 }
