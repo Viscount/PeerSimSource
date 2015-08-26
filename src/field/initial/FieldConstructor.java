@@ -31,7 +31,7 @@ public class FieldConstructor implements Control {
     private static int pid_fbp,pid_icp;
     private static double decay_rate;
     public static double potential_bounder;
-    private static int push_message_ttl;
+    public static int push_message_ttl;
     private static int cluster_layer_step;
 
     public FieldConstructor(String prefix){

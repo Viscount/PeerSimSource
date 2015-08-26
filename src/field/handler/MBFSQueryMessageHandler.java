@@ -38,7 +38,7 @@ public class MBFSQueryMessageHandler extends Handler{
                 forward_mess.setTTL(message.getTTL() - 1);
                 String json = JsonUtil.toJson(forward_mess);
                 for ( Node nextNode : neighborList ){
-                    if (CommonState.r.nextFloat() > prob ) {
+                    if (CommonState.r.nextFloat() < prob ) {
                         ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
                                 send(node, nextNode, json, protocolID);
                         GlobalListener.messageCounter++;

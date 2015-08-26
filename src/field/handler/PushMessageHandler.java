@@ -20,11 +20,19 @@ public class PushMessageHandler extends Handler{
     public void handleMessage(Node node, int protocolID, Object msg) {
         PushMessage message = (PushMessage)msg;
         FieldBasedProtocol fieldProtocol = (FieldBasedProtocol)node.getProtocol(protocolID);
-        Field msgField = message.getField();
+        Field msgField = new Field();
+        try {
+            msgField = message.getField().clone();
+            msgField.setSourceID(node.getID());
+            double currentPotential = msgField.getDecayRate() * msgField.getPotential() / (FieldConstructor.push_message_ttl - message.getTTL() + 1);
+            if ( currentPotential < FieldConstructor.potential_bounder ) return;
+            msgField.setPotential(currentPotential);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         boolean isUpdate = false;
         int isExist = fieldProtocol.field.find(msgField);
         if ( isExist == -1 ){
-            msgField.setSourceID(node.getID());
             fieldProtocol.field.add(msgField);
             isUpdate = true;
         }
@@ -32,7 +40,6 @@ public class PushMessageHandler extends Handler{
             Field currentField = fieldProtocol.field.get(isExist);
             if ( currentField.getPotential() < msgField.getPotential() ){
                 fieldProtocol.field.remove(isExist);
-                msgField.setSourceID(node.getID());
                 fieldProtocol.field.add(msgField);
                 isUpdate = true;
             }
@@ -40,11 +47,8 @@ public class PushMessageHandler extends Handler{
 
         try {
             if ( isUpdate ) {
-                Field newField = msgField.clone();
-                newField.setPotential(msgField.getPotential()*msgField.getDecayRate());
-                if ( newField.getPotential() < FieldConstructor.potential_bounder ) return;
                 PushMessage newPushMessage = (PushMessage)message.clone();
-                newPushMessage.setField(newField);
+                newPushMessage.setTTL(message.getTTL()-1);
                 String json = JsonUtil.toJson(newPushMessage);
                 List<Node> neighbors = TopologyUtil.getNeighbors(node, protocolID);
                 for ( Node nextNode : neighbors ){
