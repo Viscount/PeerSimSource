@@ -24,7 +24,7 @@ protocol.fbp.linkable lnk
 protocol.fbp.transport tr
 protocol.fbp.forward_num 3
 protocol.fbp.interest_protocol int
-protocol.fbp.route_method RandomWalk
+protocol.fbp.route_method default
 
 protocol.int field.protocol.InterestClusterProtocol
 protocol.int.transport tr

@@ -28,7 +28,7 @@ public class Initializer implements Control{
 
     private static int pid_fbp;
     private static int interest_per_node, resource_per_node;
-    private static int interest_num, resource_num;
+    public static int interest_num, resource_num;
     private static int keyword_per_interest, keyword_per_resource;
 
     public Initializer(String prefix){
