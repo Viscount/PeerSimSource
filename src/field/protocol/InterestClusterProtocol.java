@@ -52,6 +52,10 @@ public class InterestClusterProtocol extends SingleValueHolder implements EDProt
         this.ringNeighborNode = new HashMap();
     }
 
+    public boolean containsCorePotential(long interestTypeID){
+        return corePotential.containsKey(interestTypeID);
+    }
+
     public double getCorePotential(long interestTypeID){
         return corePotential.get(interestTypeID);
     }

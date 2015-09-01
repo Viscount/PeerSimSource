@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28605e3b-469a-48a6-8812-195592792ac8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/field/control/ClusterObserver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/initial/Initializer.java" afterPath="$PROJECT_DIR$/src/field/initial/Initializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-example.txt" afterPath="$PROJECT_DIR$/config-example.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/control/ClusterObserver.java" afterPath="$PROJECT_DIR$/src/field/control/ClusterObserver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" afterPath="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PeerSimSource.iws" />
@@ -70,8 +70,8 @@
       <file leaf-file-name="ClusterObserver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/field/control/ClusterObserver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32638165">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.74244004">
+              <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1044#1057#0" expanded="true" />
@@ -95,8 +95,11 @@
         <entry file="file://$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="68" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
-              <folding />
+              <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+              <folding>
+                <element signature="e#1610#1611#0" expanded="true" />
+                <element signature="e#1674#1675#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,7 +162,6 @@
         <option value="$PROJECT_DIR$/src/field/inital/FieldConstructor.java" />
         <option value="$PROJECT_DIR$/src/field/protocol/RandomWalk.java" />
         <option value="$PROJECT_DIR$/src/field/util/QueryListener.java" />
-        <option value="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
         <option value="$PROJECT_DIR$/src/field/util/JsonUtil.java" />
         <option value="$PROJECT_DIR$/src/field/support/InterestDb.java" />
         <option value="$PROJECT_DIR$/src/field/entity/InterestNode.java" />
@@ -189,8 +191,16 @@
         <option value="$PROJECT_DIR$/src/field/handler/PushMessageHandler.java" />
         <option value="$PROJECT_DIR$/config-example.txt" />
         <option value="$PROJECT_DIR$/src/field/initial/Initializer.java" />
+        <option value="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
         <option value="$PROJECT_DIR$/src/field/control/ClusterObserver.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="NamedScopeManager">
@@ -225,8 +235,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -463,7 +471,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -767,7 +777,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440602111235</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="New observer (Unfinished)">
+      <created>1441034031051</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1441034031051</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -826,7 +842,8 @@
     <MESSAGE value="bug fix&#10;add MBFS handler" />
     <MESSAGE value="bug fix&#10;New listener" />
     <MESSAGE value="bug fix&#10;New handler (Unfinished)" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix&#10;New handler (Unfinished)" />
+    <MESSAGE value="New observer (Unfinished)" />
+    <option name="LAST_COMMIT_MESSAGE" value="New observer (Unfinished)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -872,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,9 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="645" column="0" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
-          <folding>
-            <element signature="e#22321#22322#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="68" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/initial/Initializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1210,10 +1214,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+          <folding>
+            <element signature="e#1610#1611#0" expanded="true" />
+            <element signature="e#1674#1675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/control/ClusterObserver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32638165">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.74244004">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1044#1057#0" expanded="true" />

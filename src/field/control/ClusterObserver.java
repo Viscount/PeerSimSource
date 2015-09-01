@@ -40,9 +40,29 @@ public class ClusterObserver implements Control{
                 Node currentNode = Network.get(i);
                 InterestClusterProtocol currentICP = (InterestClusterProtocol)currentNode.getProtocol(pid_icp);
                 for ( long interest = 0; interest< Initializer.interest_num; interest++){
+                    if ( currentICP.containsCorePotential(interest) ){
+                        if ( minPotential.containsKey(interest) ){
+                            if ( currentICP.getCorePotential(interest) < minPotential.get(interest)){
+                                minPotential.put(interest,currentICP.getCorePotential(interest));
+                                minNode.put(interest,currentNode);
+                            }
+                        }
+                        else {
+                            minPotential.put(interest,currentICP.getCorePotential(interest));
+                            minNode.put(interest,currentNode);
+                        }
+                    }
+                }
+            }
+
+            for ( long interest = 0; interest< Initializer.interest_num; interest++){
+                if ( minNode.containsKey(interest)){
+                    Node rootNode = minNode.get(interest);
+                    InterestClusterProtocol rootICP = (InterestClusterProtocol)rootNode.getProtocol(pid_icp);
 
                 }
             }
+
         } catch ( Exception e ){
             e.printStackTrace();
         }
