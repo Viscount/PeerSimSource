@@ -9,6 +9,7 @@ import peersim.core.Network;
 import peersim.core.Node;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -57,15 +58,28 @@ public class ClusterObserver implements Control{
 
             for ( long interest = 0; interest< Initializer.interest_num; interest++){
                 if ( minNode.containsKey(interest)){
+                    fwriter.write("Interest "+interest+"\r\n");
                     Node rootNode = minNode.get(interest);
-                    InterestClusterProtocol rootICP = (InterestClusterProtocol)rootNode.getProtocol(pid_icp);
-
+                    printStructure(rootNode,interest,fwriter);
                 }
             }
-
+            fwriter.close();
         } catch ( Exception e ){
             e.printStackTrace();
         }
         return false;
+    }
+
+    private void printStructure(Node rootNode, long interest, FileWriter fwriter) throws IOException{
+        while ( rootNode!= null ) {
+            Node layerIterator = rootNode;
+            while (layerIterator!=null) {
+                InterestClusterProtocol layerICP = (InterestClusterProtocol) layerIterator.getProtocol(pid_icp);
+                fwriter.write(" Node " + layerIterator.getID() + "-p " + layerICP.getCorePotential(interest));
+                layerIterator = layerICP.getRingNeighborNode(interest);
+            }
+            InterestClusterProtocol rootICP = (InterestClusterProtocol) rootNode.getProtocol(pid_icp);
+            rootNode = rootICP.getUpstreamNode(interest);
+        }
     }
 }

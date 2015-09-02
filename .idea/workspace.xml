@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28605e3b-469a-48a6-8812-195592792ac8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/control/ClusterObserver.java" afterPath="$PROJECT_DIR$/src/field/control/ClusterObserver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" afterPath="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-example.txt" afterPath="$PROJECT_DIR$/config-example.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PeerSimSource.iws" />
@@ -47,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config-example.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config-example.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config-example.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.80187696">
+              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -61,21 +60,21 @@
         <entry file="file://$PROJECT_DIR$/src/field/control/TopologyObserver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClusterObserver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClusterObserver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/field/control/ClusterObserver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74244004">
-              <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="55" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1044#1057#0" expanded="true" />
-                <element signature="e#1109#1120#0" expanded="true" />
+                <element signature="e#1072#1085#0" expanded="true" />
+                <element signature="e#1137#1148#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,10 +188,10 @@
         <option value="$PROJECT_DIR$/src/field/handler/FieldQueryMessageHandler.java" />
         <option value="$PROJECT_DIR$/src/field/initial/FieldConstructor.java" />
         <option value="$PROJECT_DIR$/src/field/handler/PushMessageHandler.java" />
-        <option value="$PROJECT_DIR$/config-example.txt" />
         <option value="$PROJECT_DIR$/src/field/initial/Initializer.java" />
         <option value="$PROJECT_DIR$/src/field/protocol/InterestClusterProtocol.java" />
         <option value="$PROJECT_DIR$/src/field/control/ClusterObserver.java" />
+        <option value="$PROJECT_DIR$/config-example.txt" />
       </list>
     </option>
   </component>
@@ -471,9 +470,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -783,7 +782,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441034031051</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="New observer (Unfinished)">
+      <created>1441120252118</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1441120252118</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1182,26 +1187,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config-example.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/handler/FieldPushMessageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/field/control/TopologyObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1225,15 +1214,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/field/control/TopologyObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/field/control/ClusterObserver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74244004">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1044#1057#0" expanded="true" />
-            <element signature="e#1109#1120#0" expanded="true" />
+            <element signature="e#1072#1085#0" expanded="true" />
+            <element signature="e#1137#1148#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-example.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80187696">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -71,3 +71,8 @@ control.1.step CYCLE
 # control.2.field_protocol fbp
 # control.2.log_file_name topology.log
 # control.2.step CYCLE
+
+control.3 field.control.ClusterObserver
+control.3.cluster_protocol int
+control.3.log_file_name cluster.log
+control.3.step CYCLE
