@@ -71,9 +71,12 @@ public class QueryMessageHandler extends Handler{
                     long nodeID = field.getSourceID();
                     candidateNextHop.add(Network.get(Integer.parseInt(Long.toString(nodeID))));
                 }
-                if (candidateNextHop.size() == 0) candidateNextHop.addAll(TopologyUtil.getNeighbors(node, protocolID));
                 QueryMessage forward_mess = (QueryMessage)message.clone();
-                forward_mess.setTTL(message.getTTL() - 1);
+                if (candidateNextHop.size() == 0) {
+                    candidateNextHop.addAll(TopologyUtil.getNeighbors(node, protocolID));
+                    forward_mess.setTTL(message.getTTL() - 3);
+                }
+                else forward_mess.setTTL(message.getTTL() - 1);
                 String json = JsonUtil.toJson(forward_mess);
                 for (Node nexthop : candidateNextHop) {
                     ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).

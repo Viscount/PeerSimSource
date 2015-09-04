@@ -32,7 +32,7 @@ public class FieldConstructor implements Control {
     private static double decay_rate;
     public static double potential_bounder;
     public static int push_message_ttl;
-    private static int cluster_layer_step;
+    private static double cluster_layer_step;
 
     public FieldConstructor(String prefix){
         pid_fbp = Configuration.getPid(prefix + "." + PAR_PROT_FBP);
@@ -40,7 +40,7 @@ public class FieldConstructor implements Control {
         decay_rate = Configuration.getDouble(prefix + "." + PAR_DECAY_RATE);
         potential_bounder = Configuration.getDouble(prefix+"."+PAR_POTENTIAL_BOUNDER);
         push_message_ttl = Configuration.getInt(prefix + "." + PAR_PUSH_MESSAGE_TTL);
-        cluster_layer_step = Configuration.getInt(prefix + "." + PAR_CLUSTER_LAYER_STEP);
+        cluster_layer_step = Configuration.getDouble(prefix + "." + PAR_CLUSTER_LAYER_STEP);
     }
 
     @Override
@@ -88,25 +88,34 @@ public class FieldConstructor implements Control {
                             iteratorIcp = (InterestClusterProtocol)iteratorNode.getProtocol(pid_icp);
                             upstreamNode = iteratorIcp.getUpstreamNode(interestTypeID);
                         }
-                        if( upstreamNode!=null ) {
-                            // add new layer
-                            if ( field.getPotential() > iteratorIcp.getCorePotential(interestTypeID)+cluster_layer_step){
-                                iteratorIcp.setUpstreamNode(interestTypeID,currentNode);
-                                currentIcp.setUpstreamNode(interestTypeID,upstreamNode);
-                            }
-                            else{
-                                //add in current layer
-                                while (iteratorIcp.getRingNeighborNode(interestTypeID)!=null){
-                                    iteratorNode = iteratorIcp.getRingNeighborNode(interestTypeID);
-                                    iteratorIcp = (InterestClusterProtocol)iteratorNode.getProtocol(pid_icp);
-                                }
-                                iteratorIcp.setRingNeighborNode(interestTypeID,currentNode);
-                                currentIcp.setUpstreamNode(interestTypeID,iteratorIcp.getUpstreamNode(interestTypeID));
-                            }
-                        }
-                        else{
+                        if ( field.getPotential() > iteratorIcp.getCorePotential(interestTypeID)+cluster_layer_step){
                             iteratorIcp.setUpstreamNode(interestTypeID,currentNode);
+                            currentIcp.setUpstreamNode(interestTypeID,upstreamNode);
                         }
+                        else {
+                            currentIcp.setUpstreamNode(interestTypeID,iteratorIcp.getUpstreamNode(interestTypeID));
+                            currentIcp.setRingNeighborNode(interestTypeID,iteratorIcp.getRingNeighborNode(interestTypeID));
+                            iteratorIcp.setRingNeighborNode(interestTypeID,currentNode);
+                        }
+//                        if( upstreamNode!=null ) {
+//                            // add new layer
+//                            if ( field.getPotential() > iteratorIcp.getCorePotential(interestTypeID)+cluster_layer_step){
+//                                iteratorIcp.setUpstreamNode(interestTypeID,currentNode);
+//                                currentIcp.setUpstreamNode(interestTypeID,upstreamNode);
+//                            }
+//                            else{
+//                                //add in current layer
+//                                while (iteratorIcp.getRingNeighborNode(interestTypeID)!=null){
+//                                    iteratorNode = iteratorIcp.getRingNeighborNode(interestTypeID);
+//                                    iteratorIcp = (InterestClusterProtocol)iteratorNode.getProtocol(pid_icp);
+//                                }
+//                                iteratorIcp.setRingNeighborNode(interestTypeID,currentNode);
+//                                currentIcp.setUpstreamNode(interestTypeID,iteratorIcp.getUpstreamNode(interestTypeID));
+//                            }
+//                        }
+//                        else{
+//                            iteratorIcp.setUpstreamNode(interestTypeID,currentNode);
+//                        }
                     }
                 }
                 else {

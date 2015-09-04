@@ -78,6 +78,7 @@ public class ClusterObserver implements Control{
                 fwriter.write(" Node " + layerIterator.getID() + "-p " + layerICP.getCorePotential(interest));
                 layerIterator = layerICP.getRingNeighborNode(interest);
             }
+            fwriter.write("\r\n");
             InterestClusterProtocol rootICP = (InterestClusterProtocol) rootNode.getProtocol(pid_icp);
             rootNode = rootICP.getUpstreamNode(interest);
         }
