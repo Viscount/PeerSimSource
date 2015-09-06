@@ -57,6 +57,7 @@ public class Initializer implements Control{
             fieldBasedProtocol.resource = new ResourceRepo();
             fieldBasedProtocol.resource.setResourceList(ResourceDb.generateRepoForNode(fieldBasedProtocol.interestTree, resource_per_node));
             fieldBasedProtocol.field = new FieldList();
+            fieldBasedProtocol.superposition = new FieldList();
         }
         return false;
     }

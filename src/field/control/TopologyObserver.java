@@ -50,6 +50,11 @@ public class TopologyObserver implements Control{
                 for ( Field field : fieldList ){
                     fwriter.write(JsonUtil.toJson(field)+"\r\n");
                 }
+                fwriter.write("Super Field List : "+"\r\n");
+                fieldList = fbp.superposition.getFieldDetail();
+                for ( Field field : fieldList ){
+                    fwriter.write(JsonUtil.toJson(field)+"\r\n");
+                }
                 fwriter.write("Interest Tree : ");
                 InterestTree interestTree = fbp.interestTree;
                 fwriter.write(JsonUtil.toJson(interestTree)+"\r\n");

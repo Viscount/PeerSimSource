@@ -30,6 +30,7 @@ public class FieldConstructor implements Control {
 
     private static int pid_fbp,pid_icp;
     private static double decay_rate;
+    public static long counter;
     public static double potential_bounder;
     public static int push_message_ttl;
     private static double cluster_layer_step;
@@ -45,7 +46,7 @@ public class FieldConstructor implements Control {
 
     @Override
     public boolean execute() {
-        long counter = 0;
+        counter = 0;
         Map<Long,Node> interestClusterEntrance = new HashMap();
         for (int i=0; i< Network.size(); i++){
             Node currentNode = Network.get(i);

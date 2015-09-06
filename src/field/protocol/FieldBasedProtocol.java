@@ -27,6 +27,7 @@ public class FieldBasedProtocol extends SingleValueHolder implements EDProtocol{
 
     public InterestTree interestTree;
     public FieldList field;
+    public FieldList superposition;
     public ResourceRepo resource;
 
     public FieldBasedProtocol(String prefix) {

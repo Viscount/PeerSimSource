@@ -1,5 +1,5 @@
 # network size 
-SIZE 5000
+SIZE 1000
 # parameters of periodic execution 
 CYCLES 10000
 CYCLE SIZE*100 
@@ -11,7 +11,7 @@ MAXDELAY 10
 # drop is a probability, 0<=DROP<=1 
 DROP 0
 
-# random.seed 123456789
+random.seed 1410792
 
 network.size SIZE 
 simulation.endtime CYCLE*CYCLES 
@@ -24,7 +24,7 @@ protocol.fbp.linkable lnk
 protocol.fbp.transport tr
 protocol.fbp.forward_num 3
 protocol.fbp.interest_protocol int
-protocol.fbp.route_method MBFS
+protocol.fbp.route_method Field
 
 protocol.int field.protocol.InterestClusterProtocol
 protocol.int.transport tr
@@ -76,3 +76,9 @@ control.1.step CYCLE
 # control.3.cluster_protocol int
 # control.3.log_file_name cluster.log
 # control.3.step CYCLE
+
+control.4 field.control.FieldCalculator
+control.4.field_protocol fbp
+control.4.start_time CYCLE*CYCLES/2-CYCLE
+control.4.end_time CYCLE*CYCLES/2-1
+control.4.step CYCLE
