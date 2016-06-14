@@ -1,5 +1,8 @@
 package field.util;
 
+import field.entity.Resource;
+import field.entity.message.QueryMessage;
+import field.support.ResourceDb;
 import peersim.core.CommonState;
 
 import java.util.*;
@@ -61,5 +64,22 @@ public class CommonUtil {
         StringBuffer stringBuffer = new StringBuffer(classFullName);
         int pos = stringBuffer.lastIndexOf(".");
         return stringBuffer.substring(pos+1);
+    }
+
+    public static QueryListener findFullSet(QueryListener queryListener, QueryMessage message){
+        //TODO 找全集
+        int hit_count = 0;
+        int full_hit_count = 0;
+        List queryKeywords = message.getQueryKeywords();
+        for ( Resource resource : ResourceDb.getExistingRepo()) {
+            int hit_num = resource.matchKeywords(queryKeywords);
+            if (hit_num > 0) {
+                hit_count++;
+                if ( hit_num == CommonUtil.MAX_NUM_QUERY_KEYWORDS ) full_hit_count++;
+            }
+        }
+        queryListener.setTotal_count(hit_count);
+        queryListener.setTotal_full_count(full_hit_count);
+        return queryListener;
     }
 }

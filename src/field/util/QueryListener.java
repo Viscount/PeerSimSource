@@ -15,6 +15,8 @@ public class QueryListener {
     private long first_hit_time;
     private long first_full_hit_time;
     private Set<Long> resultSet;
+    private long total_count;
+    private long total_full_count;
 
     public QueryListener(long start_up_time) {
         this.start_up_time = start_up_time;
@@ -45,6 +47,22 @@ public class QueryListener {
 
     public void setFirst_full_hit_time(long first_full_hit_time) {
         this.first_full_hit_time = first_full_hit_time;
+    }
+
+    public long getTotal_count() {
+        return total_count;
+    }
+
+    public void setTotal_count(long total_count) {
+        this.total_count = total_count;
+    }
+
+    public long getTotal_full_count() {
+        return total_full_count;
+    }
+
+    public void setTotal_full_count(long total_full_count) {
+        this.total_full_count = total_full_count;
     }
 
     public Set<Long> getResultSet() {

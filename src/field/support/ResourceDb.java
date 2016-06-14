@@ -7,7 +7,9 @@ import field.util.CommonUtil;
 import peersim.core.CommonState;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by TongjiSSE on 2015/8/12.
@@ -15,9 +17,15 @@ import java.util.List;
 public class ResourceDb {
 
     private static List<Resource> resourcesDb;
+    private static Set<Resource> existingRepo;
 
     public static void init(){
         resourcesDb = new ArrayList();
+        existingRepo = new HashSet<Resource>();
+    }
+
+    public static Set<Resource> getExistingRepo(){
+        return existingRepo;
     }
 
     public static List generateRepoForNode(InterestTree interestTree,int num_resource){
@@ -51,6 +59,13 @@ public class ResourceDb {
             if ( resource.getInterestType() == interestType ) result.add(resource);
         }
         return result;
+    }
+
+    public static void addExistingResource(List<Resource> resourceList){
+        //TODO 统计现存资源
+        for (Resource resource : resourceList){
+            existingRepo.add(resource);
+        }
     }
 
 }
