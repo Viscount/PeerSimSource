@@ -6,6 +6,7 @@ import field.support.InterestDb;
 import field.util.CommonUtil;
 import field.util.GlobalListener;
 import field.util.JsonUtil;
+import field.util.QueryListener;
 import peersim.config.Configuration;
 import peersim.config.FastConfig;
 import peersim.core.CommonState;
@@ -39,7 +40,6 @@ public class QueryProducer implements Control{
     public boolean execute() {
         if ( CommonState.getTime() < start_time ) return false;
         for (int i=0; i<query_per_cycle; i++){
-            GlobalListener.addNewListener(GlobalListener.queryIDCounter);
             QueryMessage queryMessage = new QueryMessage();
             queryMessage.setQueryID(GlobalListener.queryIDCounter);
             queryMessage.setTTL(CommonUtil.MAX_MESSAGE_TTL);
@@ -56,7 +56,10 @@ public class QueryProducer implements Control{
             String json = JsonUtil.toJson(queryMessage);
             ((Transport) queryNode.getProtocol(FastConfig.getTransport(pid_fbp))).
                     send(queryNode, queryNode, json, pid_fbp);
-
+            // add listener
+            QueryListener queryListener = new QueryListener(CommonState.getTime());
+            queryListener = CommonUtil.findFullSet(queryListener, queryMessage);
+            GlobalListener.addNewListener(GlobalListener.queryIDCounter, queryListener);
             GlobalListener.queryIDCounter++;
         }
         return false;

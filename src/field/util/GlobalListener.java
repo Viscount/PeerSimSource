@@ -22,6 +22,7 @@ public class GlobalListener {
     public static IncrementalStats first_hit_time;
     public static IncrementalStats first_full_hit_time;
     public static IncrementalStats num_of_results;
+    public static IncrementalStats recall;
 
     private static Map<Long,QueryListener> queryListenerMap;
 
@@ -29,14 +30,10 @@ public class GlobalListener {
         queryIDCounter = 0;
         messageCounter = 0;
         noResultCounter = 0;
-        first_hit_time = new IncrementalStats();
-        first_full_hit_time = new IncrementalStats();
-        num_of_results = new IncrementalStats();
         queryListenerMap = new HashMap<Long,QueryListener>();
     }
 
-    public static void addNewListener(long queryID){
-        QueryListener queryListener = new QueryListener(CommonState.getTime());
+    public static void addNewListener(long queryID, QueryListener queryListener){
         queryListenerMap.put(queryID,queryListener);
     }
 
@@ -49,6 +46,10 @@ public class GlobalListener {
 
     public static void calculate(){
         noResultCounter = 0;
+        first_hit_time = new IncrementalStats();
+        first_full_hit_time = new IncrementalStats();
+        num_of_results = new IncrementalStats();
+        recall = new IncrementalStats();
         for ( Iterator it = queryListenerMap.entrySet().iterator();it.hasNext();){
             Entry<Long,QueryListener> entry = (Entry)it.next();
             QueryListener queryListener = entry.getValue();
@@ -56,6 +57,7 @@ public class GlobalListener {
             if (queryListener.getFirst_full_hit_time()!=0) first_full_hit_time.add(queryListener.getFirst_full_hit_time());
             if (queryListener.getResultSet().size()>0) num_of_results.add(queryListener.getResultSet().size());
             else noResultCounter++;
+            if (queryListener.getTotal_count()>0) recall.add(queryListener.getResultSet().size() * 1.0 / queryListener.getTotal_count());
         }
     }
 
