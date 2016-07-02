@@ -15,6 +15,7 @@ public class QueryListener {
     private long first_hit_time;
     private long first_full_hit_time;
     private Set<Long> resultSet;
+    private Set<Long> fullResultSet;
     private long total_count;
     private long total_full_count;
 
@@ -23,6 +24,7 @@ public class QueryListener {
         this.first_hit_time = 0;
         this.first_full_hit_time = 0;
         this.resultSet = new HashSet<Long>();
+        this.fullResultSet = new HashSet<Long>();
     }
 
     public long getStart_up_time() {
@@ -73,6 +75,14 @@ public class QueryListener {
         this.resultSet = resultSet;
     }
 
+    public Set<Long> getFullResultSet() {
+        return fullResultSet;
+    }
+
+    public void setFullResultSet(Set<Long> fullResultSet) {
+        this.fullResultSet = fullResultSet;
+    }
+
     public void receiveResult(List<QueryResult> resultList){
         if ( resultList.size() > 0 ){
             for ( QueryResult queryResult : resultList ){
@@ -81,6 +91,7 @@ public class QueryListener {
                     resultSet.add(queryResult.getResourceID());
                     if ( queryResult.getHit_num() == CommonUtil.MAX_NUM_QUERY_KEYWORDS ){
                         if ( first_full_hit_time == 0 ) first_full_hit_time = queryResult.getHit_timestamp()-start_up_time;
+                        fullResultSet.add(queryResult.getResourceID());
                     }
                 }
             }

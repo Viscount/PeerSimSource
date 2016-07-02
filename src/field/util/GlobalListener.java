@@ -22,6 +22,7 @@ public class GlobalListener {
     public static IncrementalStats first_hit_time;
     public static IncrementalStats first_full_hit_time;
     public static IncrementalStats num_of_results;
+    public static IncrementalStats num_of_full_results;
     public static IncrementalStats recall;
 
     private static Map<Long,QueryListener> queryListenerMap;
@@ -49,6 +50,7 @@ public class GlobalListener {
         first_hit_time = new IncrementalStats();
         first_full_hit_time = new IncrementalStats();
         num_of_results = new IncrementalStats();
+        num_of_full_results = new IncrementalStats();
         recall = new IncrementalStats();
         for ( Iterator it = queryListenerMap.entrySet().iterator();it.hasNext();){
             Entry<Long,QueryListener> entry = (Entry)it.next();
@@ -56,8 +58,9 @@ public class GlobalListener {
             if (queryListener.getFirst_hit_time()!=0) first_hit_time.add(queryListener.getFirst_hit_time());
             if (queryListener.getFirst_full_hit_time()!=0) first_full_hit_time.add(queryListener.getFirst_full_hit_time());
             if (queryListener.getResultSet().size()>0) num_of_results.add(queryListener.getResultSet().size());
-            else noResultCounter++;
-            if (queryListener.getTotal_count()>0) recall.add(queryListener.getResultSet().size() * 1.0 / queryListener.getTotal_count());
+            if (queryListener.getFullResultSet().size()>0) num_of_full_results.add(queryListener.getFullResultSet().size());
+            if (queryListener.getTotal_full_count() == 0) noResultCounter++;
+            if (queryListener.getTotal_full_count()>0) recall.add(queryListener.getFullResultSet().size() * 1.0 / queryListener.getTotal_full_count());
         }
     }
 

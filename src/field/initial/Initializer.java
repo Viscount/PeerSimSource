@@ -6,6 +6,7 @@ import field.protocol.FieldBasedProtocol;
 import field.support.InterestDb;
 import field.support.KeywordDb;
 import field.support.ResourceDb;
+import field.support.SpanningTreeInfo;
 import field.util.GlobalListener;
 import peersim.config.Configuration;
 import peersim.core.Control;
@@ -60,6 +61,7 @@ public class Initializer implements Control{
             fieldBasedProtocol.field = new FieldList();
             fieldBasedProtocol.superposition = new FieldList();
         }
+        SpanningTreeInfo.init(pid_fbp);
         return false;
     }
 }

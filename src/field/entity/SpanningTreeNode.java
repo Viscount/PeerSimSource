@@ -1,5 +1,6 @@
 package field.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +13,14 @@ public class SpanningTreeNode {
 
     public SpanningTreeNode(Long id){
         this.nodeId = id;
+    }
+
+    public void addChild(SpanningTreeNode child){
+        if( childrenList == null ){
+            childrenList = new ArrayList<SpanningTreeNode>();
+            childrenList.add(child);
+        }
+        else childrenList.add(child);
     }
 
     public long getNodeId() {
