@@ -33,13 +33,15 @@ public class SpanningTreeQueryMessageHandler extends Handler{
         if (neighbors == null || neighbors.size()==0) return;
         for ( SpanningTreeNode treeNode : neighbors){
             try {
-                Node nextNode = Network.get(Long.valueOf(treeNode.getNodeId()).intValue());
-                QueryMessage forward_mess = (QueryMessage) message.clone();
-                forward_mess.setTTL(message.getTTL() - 1);
-                GlobalListener.messageCounter++;
-                String json = JsonUtil.toJson(forward_mess);
-                ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
-                        send(node, nextNode, json, protocolID);
+                if (treeNode.checkInterest(message.getInterestType())){
+                    Node nextNode = Network.get(Long.valueOf(treeNode.getNodeId()).intValue());
+                    QueryMessage forward_mess = (QueryMessage) message.clone();
+                    forward_mess.setTTL(message.getTTL() - 1);
+                    GlobalListener.messageCounter++;
+                    String json = JsonUtil.toJson(forward_mess);
+                    ((Transport) node.getProtocol(FastConfig.getTransport(protocolID))).
+                            send(node, nextNode, json, protocolID);
+                }
             }
             catch (Exception e){
                 e.printStackTrace();
